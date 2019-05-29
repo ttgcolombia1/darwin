@@ -1,6 +1,6 @@
 <?php
 
-namespace registro\loginjano\funcion;
+namespace registro\logindarwin\funcion;
 
 if (!isset($GLOBALS ["autorizado"])) {
     include ("index.php");

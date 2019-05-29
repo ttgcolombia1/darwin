@@ -1,6 +1,6 @@
 <?php
 
-namespace registro\loginjano;
+namespace registro\logindarwin;
 
 // Evitar un acceso directo a este archivo
 if (! isset ( $GLOBALS ["autorizado"] )) {

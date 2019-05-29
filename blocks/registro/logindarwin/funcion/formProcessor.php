@@ -1,8 +1,8 @@
 <?php
 
-namespace registro\loginjano;
+namespace registro\logindarwin;
 
-use registro\loginjano\funcion\Redireccionador;
+use registro\logindarwin\funcion\Redireccionador;
 
 // Se incluye la clase para log de usuarios
 include_once ("core/log/logger.class.php");
