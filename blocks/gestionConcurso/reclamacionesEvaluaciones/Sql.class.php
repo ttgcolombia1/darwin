@@ -90,8 +90,8 @@ class Sql extends \Sql {
                             $cadenaSql.=" rol.rol_alias rol,";
                             $cadenaSql.=" perfil.fecha_caduca fecha_caduca,";
                             $cadenaSql.=" perfil.estado estado";
-                            $cadenaSql.=" FROM jano_usuario_subsistema perfil";
-                            $cadenaSql.=" INNER JOIN jano_rol rol";
+                            $cadenaSql.=" FROM darwin_usuario_subsistema perfil";
+                            $cadenaSql.=" INNER JOIN darwin_rol rol";
                             $cadenaSql.=" ON rol.rol_id=perfil.rol_id";
                             $cadenaSql.=" AND rol.estado_registro_id=1";
                             $cadenaSql.=" WHERE";
@@ -167,7 +167,7 @@ class Sql extends \Sql {
 					$cadenaSql = " SELECT reclamacion.id id_reclamacion, reclamacion.observacion, reclamacion.fecha_registro, reclamacion.consecutivo_calendario, reclamacion.id_inscrito,";
 					$cadenaSql .= " evaluacion.id_evaluar, evaluacion.puntaje_parcial, evaluacion.observacion observacion_evaluacion, evaluacion.id evaluacion_id, grupo.id id_grupo,";
 					$cadenaSql .= " evaluacion.fecha_registro evaluacion_fecha, criterio.nombre nombre_criterio, grupo.id_evaluador, concat(us.nombre, ' ', us.apellido) AS evaluador";
-					$cadenaSql .= " FROM concurso.evaluacion_reclamacion reclamacion, concurso.evaluacion_parcial evaluacion, concurso.concurso_evaluar ce, concurso.criterio_evaluacion criterio, concurso.evaluacion_grupo grupo, jano_usuario us";
+					$cadenaSql .= " FROM concurso.evaluacion_reclamacion reclamacion, concurso.evaluacion_parcial evaluacion, concurso.concurso_evaluar ce, concurso.criterio_evaluacion criterio, concurso.evaluacion_grupo grupo, darwin_usuario us";
 					$cadenaSql .= " WHERE";
 					$cadenaSql .= " reclamacion.id=evaluacion.id_reclamacion";
 					$cadenaSql .= " and evaluacion.id_evaluar=ce.consecutivo_evaluar";
@@ -184,7 +184,7 @@ class Sql extends \Sql {
 				$cadenaSql = " SELECT reclamacion.id id_reclamacion, reclamacion.observacion observacion_reclamacion, reclamacion.fecha_registro, reclamacion.consecutivo_calendario,";
 				$cadenaSql .= " evaluacion.id_inscrito, evaluacion.id_evaluar, evaluacion.puntaje_parcial, evaluacion.observacion, ce.maximo_puntos,";
 				$cadenaSql .= " evaluacion.fecha_registro evaluacion_fecha, criterio.nombre nombre_criterio, grupo.id_evaluador, concat(us.nombre, ' ', us.apellido) AS evaluador";
-				$cadenaSql .= " FROM concurso.evaluacion_reclamacion reclamacion, concurso.evaluacion_parcial evaluacion, concurso.concurso_evaluar ce, concurso.criterio_evaluacion criterio, concurso.evaluacion_grupo grupo, jano_usuario us";
+				$cadenaSql .= " FROM concurso.evaluacion_reclamacion reclamacion, concurso.evaluacion_parcial evaluacion, concurso.concurso_evaluar ce, concurso.criterio_evaluacion criterio, concurso.evaluacion_grupo grupo, darwin_usuario us";
 				$cadenaSql .= " WHERE";
 				$cadenaSql .= " reclamacion.id=evaluacion.id_reclamacion";
 				$cadenaSql .= " and evaluacion.id_evaluar=ce.consecutivo_evaluar";
@@ -216,7 +216,7 @@ class Sql extends \Sql {
 				$cadenaSql = " SELECT";
 				$cadenaSql .= " respuesta.id, respuesta.id_reclamacion, respuesta.respuesta, respuesta.observacion, respuesta.fecha_registro, respuesta.estado, ";
 				$cadenaSql .= " respuesta.id_evaluar_respuesta, respuesta.id_evaluador, concat(us.nombre, ' ', us.apellido) AS evaluador";
-				$cadenaSql .= " FROM concurso.respuesta_reclamacion respuesta, concurso.evaluacion_reclamacion reclamacion, jano_usuario us";
+				$cadenaSql .= " FROM concurso.respuesta_reclamacion respuesta, concurso.evaluacion_reclamacion reclamacion, darwin_usuario us";
 				$cadenaSql .= " WHERE";
 				$cadenaSql .= " reclamacion.id=respuesta.id_reclamacion";
 				$cadenaSql .= " AND reclamacion.id=" . $variable ['reclamacion'];
@@ -815,7 +815,7 @@ class Sql extends \Sql {
 				$cadenaSql .= " (SELECT DISTINCT eval.consecutivo_calendario fase ";
 				$cadenaSql .= " FROM concurso.concurso_evaluar eval ";
 				$cadenaSql .= " INNER JOIN  concurso.jurado_criterio jcrt ON jcrt.id_criterio=eval.consecutivo_criterio AND jcrt.estado=eval.estado ";
-				$cadenaSql .= " INNER JOIN public.jano_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='" . $variable ['hoy'] . "' ";
+				$cadenaSql .= " INNER JOIN public.darwin_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='" . $variable ['hoy'] . "' ";
 				$cadenaSql .= " WHERE usu.id_usuario='" . $variable ['jurado'] . "'";
 				$cadenaSql .= " AND eval.estado='A' ";
 				$cadenaSql .= " AND eval.consecutivo_concurso='" . $variable ['concurso'] . "') ";

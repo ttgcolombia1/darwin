@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
 // Password required to gain access to the project
-define('SW_PROJECT_PASSWORD', 'concursosJano');
+define('SW_PROJECT_PASSWORD', 'concursosdarwin');
 
 // Location of Reportico Top Level Directory From Browser Point of View
 define('SW_HTTP_BASEDIR', './');
@@ -55,10 +55,10 @@ define('SW_DB_DATABASE', SW_FRAMEWORK_DB_DATABASE);
 else
 {
 define('SW_DB_DRIVER', SW_DB_TYPE);
-define('SW_DB_USER', 'jano_reporte');
-define('SW_DB_PASSWORD', 'r3p0rt3s=jano2017');
+define('SW_DB_USER', 'darwin_reporte');
+define('SW_DB_PASSWORD', 'r3p0rt3s=darwin2017');
 define('SW_DB_HOST', '10.20.0.184:5434');
-define('SW_DB_DATABASE', 'jano');
+define('SW_DB_DATABASE', 'darwin');
 }
 define('SW_DB_CONNECT_FROM_CONFIG', true);
 define('SW_DB_DATEFORMAT', 'Y-m-d');

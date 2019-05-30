@@ -97,9 +97,9 @@ $enlaceCambiarClave ['nombre'] = "Cambiar Contraseña";
 
 // Fin de la sesión
 
-$enlaceFinSesion ['enlace'] = "action=loginjano";
+$enlaceFinSesion ['enlace'] = "action=logindarwin";
 $enlaceFinSesion ['enlace'] .= "&pagina=index";
-$enlaceFinSesion ['enlace'] .= "&bloque=loginjano";
+$enlaceFinSesion ['enlace'] .= "&bloque=logindarwin";
 $enlaceFinSesion ['enlace'] .= "&bloqueGrupo=registro";
 $enlaceFinSesion ['enlace'] .= "&opcion=finSesion";
 $enlaceFinSesion ['enlace'] .= "&campoSeguro=" . $_REQUEST ['tiempo'];

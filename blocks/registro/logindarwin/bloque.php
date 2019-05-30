@@ -29,7 +29,7 @@ include_once ("Lenguaje.class.php");
 
 // Esta clase actua como control del bloque en un patron FCE
 
-if (! class_exists ( '\\registro\\loginjano' )) {
+if (! class_exists ( '\\registro\\logindarwin' )) {
     
 	
     class Bloque implements \Bloque {
