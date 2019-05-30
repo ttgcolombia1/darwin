@@ -1,7 +1,7 @@
 
 CREATE ROLE darwin_admin LOGIN password '4dm1n=darwin2019'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
-COMMENT ON ROLE jano_admin IS 'Usuario para sistema Gestión de procesos de selección.';
+COMMENT ON ROLE darwin_admin IS 'Usuario para sistema Gestión de procesos de selección.';
 
 CREATE ROLE darwin_reporte LOGIN password 'r3p0rt3s=darwin2019'
   NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;

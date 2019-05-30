@@ -1,5 +1,5 @@
 <?php 
-namespace registro\loginjano;
+namespace registro\logindarwin;
 
 
 

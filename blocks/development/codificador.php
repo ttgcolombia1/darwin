@@ -1,11 +1,12 @@
 <?php
 include_once ("../../core/crypto/Encriptador.class.php");
 $miCodificador = Encriptador::singleton ();
-echo $miCodificador->codificar ( "localhost" ) . "<br>";	
-echo $miCodificador->codificar ( "jano" ) . " | us<br>";	
-echo $miCodificador->codificar ( "jano_admin" ) . " | us<br>";	
-echo $miCodificador->codificar ( "4dm1n=jano2017" ) . " | pw<br>";
-echo $miCodificador->codificar ( "jano_" ) . " | pre<br>";	
+echo $miCodificador->codificar ( "localhost" ) . "<br>";
+echo $miCodificador->codificar ( "5432" ) . " | port<br>";
+echo $miCodificador->codificar ( "darwin" ) . " | db <br>";	
+echo $miCodificador->codificar ( "darwin_admin" ) . " | us<br>";	
+echo $miCodificador->codificar ( "4dm1n=darwin2019" ) . " | pw<br>";
+echo $miCodificador->codificar ( "darwin_" ) . " | pre<br>";	
 echo $miCodificador->codificar ( "public" ) . "<br>";
 
 
@@ -30,6 +31,7 @@ echo "<br>********<br>";
 "rrhw9WOCI45ym2NJaIyM3k07Bydm6JOYrajPvXQALoE",
 );
   foreach ($parametro as $valor){ echo $miCodificador->decodificar($valor)."<br>"; }
- 
+
+  
 
 ?>
