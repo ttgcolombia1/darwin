@@ -290,7 +290,7 @@ class Formulario {
             <div id="fondo_texto">
                 <div id="texto">
                     <h3>Sistema de Gestión para Concurso de Méritos</h3><BR>
-                    <h2>JANO</h2>
+                    <h2>darwin</h2>
                 </div>
             </div>
         </section>

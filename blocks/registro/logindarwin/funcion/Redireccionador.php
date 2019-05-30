@@ -16,8 +16,8 @@ class Redireccionador {
 
         switch ($opcion) {
             case "index" :
-                //echo "Bienvenido, perfil jano, todo poderoso.";
-                $variable = 'pagina=indexjano';
+                //echo "Bienvenido, perfil darwin, todo poderoso.";
+                $variable = 'pagina=indexdarwin';
                 $variable .= '&registro=' . $valor [0];
                 break;
 

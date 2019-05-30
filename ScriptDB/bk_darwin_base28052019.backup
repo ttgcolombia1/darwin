@@ -32190,8 +32190,8 @@ COPY public.darwin_configuracion (id_parametro, parametro, valor) FROM stdin;
 --
 
 COPY public.darwin_dbms (idconexion, nombre, dbms, servidor, puerto, conexionssh, db, esquema, usuario, password) FROM stdin;
-1	estructura	pgsql	localhost	5434		darwin	public	darwin_admin	5lAP_6q_BLHH73fa86ghDFM9G8Ljw2W5iS9MYhpAqRM
-2	reportes	pgsql	localhost	5434		darwin	public	darwin_reporte	HDrnES1-ABGMdHfnoD42v-5gtHEDgI-cRhwE8vvwGoc
+1	estructura	pgsql	localhost	5432		darwin	public	darwin_admin	5lAP_6q_BLHH73fa86ghDFM9G8Ljw2W5iS9MYhpAqRM
+2	reportes	pgsql	localhost	5432		darwin	public	darwin_reporte	HDrnES1-ABGMdHfnoD42v-5gtHEDgI-cRhwE8vvwGoc
 \.
 
 

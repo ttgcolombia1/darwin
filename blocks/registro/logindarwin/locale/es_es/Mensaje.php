@@ -52,22 +52,19 @@ $this->idioma['mensajeMail']= '<html>
 
 <footer>
             <div id="footerLeft">
-                <p style="font-size: 15px;">Universidad Distrital Francisco José de
-                    Caldas</p>
-                <p>
-                    Todos los derechos reservados. Carrera 8 N. 40-78 Piso 1 / PBX
-                    3238400 - 3239300 <a href="">computo@udistrital.edu.co</a>
+                <p style="font-size: 15px;">Teleinformatics tecnology Group</p>
+                <p> <a href="">ttg@ttg.com.co</a>
                 </p>
             </div>
             <div id="footerRight">
                 <a href="https://www.facebook.com/UniversidadDistrital.SedeIngenieria"
                    target="_blank"><img
-                        src="#host/jano/blocks/registro/loginjano//imagenes/facebook.png" /></a> <a
+                        src="#host/darwin/blocks/registro/logindarwin//imagenes/facebook.png" /></a> <a
                     href="https://plus.google.com/110031223488101566921/about?gl=co&hl=es"
                     target="_blank"><img
-                        src="#host/jano/blocks/registro/loginjano//imagenes/google+.png" /></a> <a
+                        src="#host/darwin/blocks/registro/logindarwin//imagenes/google+.png" /></a> <a
                     href="http://www.udistrital.edu.co/" target="_blank"><img
-                        src="#host/jano/blocks/registro/loginjano/imagenes/mail.png" /></a>
+                        src="#host/darwin/blocks/registro/logindarwin/imagenes/mail.png" /></a>
             </div>
         </footer>
 	</body>

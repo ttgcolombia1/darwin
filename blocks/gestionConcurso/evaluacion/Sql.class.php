@@ -191,8 +191,8 @@ class Sql extends \Sql {
 				$cadenaSql.=" rol.rol_alias rol,";
 				$cadenaSql.=" perfil.fecha_caduca fecha_caduca,";
 				$cadenaSql.=" perfil.estado estado";
-				$cadenaSql.=" FROM jano_usuario_subsistema perfil";
-				$cadenaSql.=" INNER JOIN jano_rol rol";
+				$cadenaSql.=" FROM darwin_usuario_subsistema perfil";
+				$cadenaSql.=" INNER JOIN darwin_rol rol";
 				$cadenaSql.=" ON rol.rol_id=perfil.rol_id";
 				$cadenaSql.=" AND rol.estado_registro_id=1";
 				$cadenaSql.=" WHERE";
@@ -481,7 +481,7 @@ class Sql extends \Sql {
 				$cadenaSql .= " INNER JOIN  concurso.persona p ON p.consecutivo = ci.consecutivo_persona ";
 				$cadenaSql .= " INNER JOIN concurso.concurso_evaluar eval ON eval.consecutivo_concurso=c.consecutivo_concurso ";
 				$cadenaSql .= " INNER JOIN concurso.jurado_criterio jcrt ON jcrt.id_criterio=eval.consecutivo_criterio AND jcrt.estado=eval.estado ";
-				$cadenaSql .= " INNER JOIN public.jano_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='".$variable['hoy']."' ";
+				$cadenaSql .= " INNER JOIN public.darwin_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='".$variable['hoy']."' ";
 				$cadenaSql .= " WHERE ji.id_usuario='".$variable['jurado']."'";
 				$cadenaSql .= " AND eval.estado='A' ";
 				$cadenaSql .= " AND eval.consecutivo_concurso='".$variable['concurso']."'";
@@ -518,7 +518,7 @@ class Sql extends \Sql {
 				$cadenaSql .= " (SELECT DISTINCT eval.consecutivo_calendario fase ";
 				$cadenaSql .= " FROM concurso.concurso_evaluar eval ";
 				$cadenaSql .= " INNER JOIN  concurso.jurado_criterio jcrt ON jcrt.id_criterio=eval.consecutivo_criterio AND jcrt.estado=eval.estado ";
-				$cadenaSql .= " INNER JOIN public.jano_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='".$variable['hoy']."' ";
+				$cadenaSql .= " INNER JOIN public.darwin_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' AND usu.fecha_caduca>='".$variable['hoy']."' ";
 				$cadenaSql .= " WHERE usu.id_usuario='".$variable['jurado']."'";
 				$cadenaSql .= " AND eval.estado='A' ";
 				$cadenaSql .= " AND eval.consecutivo_concurso='".$variable['concurso']."') ";

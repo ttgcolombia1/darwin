@@ -34,7 +34,7 @@ class Sql extends \Sql {
 				$cadenaSql = "SET lc_time_names = 'es_ES' ";
 			break;
 			case "consultaMensaje":
-                                $cadenaSql = "Select id, tipo, texto, estado FROM jano_texto ";
+                                $cadenaSql = "Select id, tipo, texto, estado FROM darwin_texto ";
                                 $cadenaSql .= "WHERE tipo='autorizacionHV' ";
                                 $cadenaSql .= "AND estado='A' ";
                             break;                    

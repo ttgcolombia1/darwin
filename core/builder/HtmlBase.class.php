@@ -10,7 +10,7 @@ include_once ("core/manager/Configurador.class.php");
  */
 class HtmlBase {
 
-	var $instanciaFormulario;
+    var $instanciaFormulario;
 
     var $conexion_id;
 
@@ -217,8 +217,8 @@ class HtmlBase {
 
     function campoSeguro($campo = '') {
 
-        if (isset ( $_REQUEST ['tiempo'] )) {
-            $this->atributos ['tiempo'] = (int) substr($_REQUEST['tiempo'], 0, -2);
+        if (isset($_REQUEST['tiempo'])  ) {
+            $this->atributos ['tiempo'] =  substr($_REQUEST['tiempo'], 0, -2);
             $this->atributos ['tiempo'] =  $this->atributos ['tiempo'] * pow(10, 2);
         }else{
         	$this->atributos ['tiempo'] = '';

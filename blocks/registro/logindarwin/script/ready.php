@@ -24,8 +24,8 @@ $('#<?php echo sha1('clave'.$_REQUEST['tiempo']);?>').keydown(function(e) {
 });
 
         $(function() {
-            $("#loginjano").submit(function() {
-                $resultado=$("#loginjano").validationEngine("validate");
+            $("#logindarwin").submit(function() {
+                $resultado=$("#logindarwin").validationEngine("validate");
                 if ($resultado) {
                                 
                     return true;
