@@ -80,7 +80,7 @@ $this->idioma["departamento_residencia"]="Departamento  ";
 $this->idioma["ciudad_residenciaTitulo"]="Seleccione la ciudad de residencia";
 $this->idioma["ciudad_residencia"]="Ciudad Residencia  ";
 $this->idioma["direccion_residenciaTitulo"]="Ingrese su dirección de residencia";
-$this->idioma["direccion_residencia"]="Direccion residencia  ";
+$this->idioma["direccion_residencia"]="Dirección residencia  ";
 $this->idioma["correoTitulo"]="Digite el correo electrónico principal - correo@principal.c";
 $this->idioma["correo"]="Correo Electrónico  ";
 $this->idioma["correo_secundarioTitulo"]="Digite el correo electrónico alterno - correo@alterno.c";
@@ -271,7 +271,7 @@ $this->idioma["ciudad_produccionTitulo"]="Seleccione la ciudad ";
 $this->idioma["ciudad_produccion"]="Ciudad  ";
 $this->idioma["codigo_tipo_produccionTitulo"]="Seleccione el tipo de producto";
 $this->idioma["codigo_tipo_produccion"]="Producto  ";
-$this->idioma["nombre_tipo_produccionTitulo"]="Ingrese el nombre del producto";
+$this->idioma["nombre_tipo_produccionTitulo"]="Ingrese el nombre del tipo de producto generado";
 $this->idioma["nombre_tipo_produccion"]="Tipo producto  ";
 $this->idioma["titulo_produccionTitulo"]="Ingrese el título del producto";
 $this->idioma["titulo_produccion"]="Título producto  ";
@@ -319,7 +319,7 @@ $this->idioma["institucion_certificacion"]="Institución certifica  ";
 $this->idioma["soporteIdiomaTitulo"]="Adjuntar documento en formato PDF menor a 1 Mb";
 $this->idioma["soporteIdioma"]="Soporte certificación  ";
 $this->idioma["idioma_concursoTitulo"]="Indique si es idioma para presenta las pruebas de los conculsos ";
-$this->idioma["idioma_concurso"]="Idioma para concursos";
+$this->idioma["idioma_concurso"]="Idioma para procesos";
 
 
 $this->idioma["noDefinido"]="No definido";

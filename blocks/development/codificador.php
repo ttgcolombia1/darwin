@@ -1,6 +1,7 @@
 <?php
 include_once ("../../core/crypto/Encriptador.class.php");
 $miCodificador = Encriptador::singleton ();
+echo $miCodificador->codificar ( "pgsql" ) . " | port<br>";
 echo $miCodificador->codificar ( "localhost" ) . "<br>";
 echo $miCodificador->codificar ( "5432" ) . " | port<br>";
 echo $miCodificador->codificar ( "darwin" ) . " | db <br>";	
@@ -9,6 +10,7 @@ echo $miCodificador->codificar ( "4dm1n=darwin2019" ) . " | pw<br>";
 echo $miCodificador->codificar ( "darwin_" ) . " | pre<br>";	
 echo $miCodificador->codificar ( "public" ) . "<br>";
 
+echo $miCodificador->codificar ( "r3p0rt3s=darwin2019" ) . " | pw<br>";
 
 echo $miCodificador->decodificar ( "lYOdxSIOMjakTkGvwAJ04V8hFqt2_cs4lS0lHuaB2rw" ) . "<br>";
 echo $miCodificador->decodificar ( "GjLRV1AfgseUTBDdcO62X2HJkEqjE4LGv_S3QK10wdo" ) . "<br>";

@@ -1,7 +1,7 @@
 
 #pie{
     border: 0;
-    height: 150px;
+    height: 80px;
     display: block;
     background-size: 100% ;
     width: 100%
@@ -87,7 +87,7 @@ element.style {
 }
 
 #colm1 {
-    width: 10%;
+    width: 8%;
     float: left;
     display: block;
     height: 50px;
@@ -98,23 +98,23 @@ element.style {
 
 #colm2{
 
-    width: 65%;
+    width: 45%;
     float: left;
     display: block;
     height: 50px;
     left: 0;
     margin: 0%;
-    color:#5FA6D7;
+    color:#96999a;
 }
 
 
 #colm3 {
-    width: 25%;
+    width: 32%;
     float: right;
     display: block;
     left: 0;
     margin-top: 0.1%;
-    color:#5FA6D7;
+    color:#96999a;
 }
 
 

@@ -30,13 +30,13 @@ $this->idioma["marcoEvaluacionPerfil"]="Resultados Evaluación Perfil";
 
 $this->idioma["inscripcion"]="Número Inscripción:";
 $this->idioma["fecha_registro"]="Fecha Inscripción:";
-$this->idioma["nombre"]="Nombre Concurso:";
-$this->idioma["modalidad"]="Modalidad Concurso:";
+$this->idioma["nombre"]="Nombre Proceso:";
+$this->idioma["modalidad"]="Modalidad Proceso:";
 $this->idioma["codigo"]="Código perfil:";
 $this->idioma["perfil"]="Perfil:";
 $this->idioma["dependencia"]="Dependencia / Facultad:";
 $this->idioma["area"]="Área / Proyecto:";
-$this->idioma["nivel_concurso"]="Nivel Concurso:";
+$this->idioma["nivel_concurso"]="Nivel Proceso:";
 
 $this->idioma["cuadroIdentificacion"]="Documento identificación "; 
 $this->idioma["cuadroNacimiento"]="Lugar y Fecha de nacimiento"; 
@@ -161,7 +161,7 @@ $this->idioma["nivel_lee"]="Nivel Lectura  ";
 $this->idioma["nivel_escribe"]="Nivel escritura  ";
 $this->idioma["nivel_habla"]="Nivel Dialogo  ";
 $this->idioma["certificacion"]="Nombre certificación  ";
-$this->idioma["idioma_concurso"]="Idioma para concursos";
+$this->idioma["idioma_concurso"]="Idioma para procesos";
 $this->idioma["institucion_certificacion"]="Institución certifica  ";
 
 $this->idioma ["noEncontroPerfil"] ="No existen datos Registrados de la inscripción. ";
@@ -178,7 +178,7 @@ $this->idioma ["noEncontroIdioma"] ="No existen datos de Lengua Extranjera regis
 $this->idioma ["noEncontroEvaluacion"] ="No existen datos Registrados de Evaluación. ";
 
 $this->idioma ["faseSoporteOn"] ="Los siguientes datos de hoja de vida son pre-eliminares, debido a que la fase de carga de soportes aun esta activa. ";
-$this->idioma ["faseSoporteOn"].="<br>Una vez se cierre dicha fase no será posible relacionar más soportes para el presente concurso. ";
+$this->idioma ["faseSoporteOn"].="<br>Una vez se cierre dicha fase no será posible relacionar más soportes para el presente proceso. ";
 
 
 //------------------Mensajes -----------------------------------

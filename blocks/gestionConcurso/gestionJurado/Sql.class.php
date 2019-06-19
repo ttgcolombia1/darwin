@@ -34,7 +34,7 @@ class Sql extends \Sql {
 
 			 case "consultaUsuariosTipoJurado":
 				 $cadenaSql=" SELECT u.id_usuario AS id_usuario, concat( u.nombre, ' ', u.apellido) AS nombre, id_jurado_tipo AS id_tipo, jt.nombre AS tipo_jurado, cj.estado AS estado";
-				 $cadenaSql.=" FROM darwin_usuario_subsistema s, darwin_usuario u, concurso.jurado cj, concurso.jurado_tipo jt";
+				 $cadenaSql.=" FROM jano_usuario_subsistema s, jano_usuario u, concurso.jurado cj, concurso.jurado_tipo jt";
 				 $cadenaSql.=" WHERE rol_id=3";//rol de jurado
 				 $cadenaSql.=" AND u.id_usuario=s.id_usuario";
 				 $cadenaSql.=" AND cj.id_usuario=u.id_usuario";
@@ -44,7 +44,7 @@ class Sql extends \Sql {
 
 			case "consultaUsuariosJurado":
 					$cadenaSql = "SELECT u.id_usuario, concat( u.nombre, ' ', u.apellido) AS nombre  ";
-					$cadenaSql .= "FROM darwin_usuario_subsistema s, darwin_usuario u ";
+					$cadenaSql .= "FROM jano_usuario_subsistema s, jano_usuario u ";
 					$cadenaSql .= "WHERE rol_id=3 ";//rol de jurado
 					$cadenaSql .= "AND u.id_usuario=s.id_usuario ";
 					$cadenaSql .= "AND u.id_usuario not in";

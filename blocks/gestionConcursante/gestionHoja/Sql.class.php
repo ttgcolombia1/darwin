@@ -34,7 +34,7 @@ class Sql extends \Sql {
 				$cadenaSql = "SET lc_time_names = 'es_ES' ";
 			break;
 			case "consultaMensaje":
-                                $cadenaSql = "Select id, tipo, texto, estado FROM darwin_texto ";
+                                $cadenaSql = "Select id, tipo, texto, estado FROM jano_texto ";
                                 $cadenaSql .= "WHERE tipo='autorizacionHV' ";
                                 $cadenaSql .= "AND estado='A' ";
                             break;                    
@@ -53,7 +53,9 @@ class Sql extends \Sql {
 				$cadenaSql .= 'FROM ';
 				$cadenaSql .= 'general.departamento ';
 				$cadenaSql .= 'WHERE ';
-				$cadenaSql .= 'id_pais = 112;';
+                                if(isset($variable['pais']) && $variable['pais']!='')
+                                    {$cadenaSql.=" id_pais ='".$variable['pais']."' ";}
+                                else {$cadenaSql .= 'id_pais = 112';}
                             break;
                		case 'buscarDepartamentoAjax' :
 				$cadenaSql = 'SELECT ';
@@ -72,7 +74,10 @@ class Sql extends \Sql {
 				$cadenaSql .= 'FROM ';
 				$cadenaSql .= 'general.ciudad ';
 				$cadenaSql .= 'WHERE ';
-                                $cadenaSql .= 'ab_pais = \'CO\';';
+                                if(isset($variable['departamento']) && $variable['departamento']!='')
+                                     {$cadenaSql.=" id_departamento ='".$variable['departamento']."' ";}
+                                else {$cadenaSql .= 'ab_pais = \'CO\'';}
+                                
                             break;
 			case 'buscarCiudadAjax' :
 				$cadenaSql = 'SELECT ';

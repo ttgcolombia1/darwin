@@ -1,48 +1,48 @@
 
 <?php
 $this->idioma ["noDefinido"] = "Etiqueta no definida";
-$this->idioma["nuevoConcurso"]="<br><b>Registrar Nuevo Concurso</b>";
+$this->idioma["nuevoConcurso"]="<br><b>Registrar Nuevo Proceso</b>";
 //tabs
-$this->idioma["tabConcurso"]="Registro Concurso";
+$this->idioma["tabConcurso"]="Registro Proceso";
 $this->idioma["tabCriterio"]="Criterios de Evaluación";
 $this->idioma["tabCalendario"]="Calendario";
 $this->idioma["tabPerfil"]="Perfiles";
 
 //marcos
-$this->idioma["marcoConcurso"]="Nuevo Concurso";
-$this->idioma["marcoListaConcurso"]="Concursos Registrados";
-$this->idioma["marcoDetalleConcurso"]="Detalle Concurso";
+$this->idioma["marcoConcurso"]="Nuevo Proceso";
+$this->idioma["marcoListaConcurso"]="Procesos Registrados";
+$this->idioma["marcoDetalleConcurso"]="Detalle Proceso";
 $this->idioma["marcoCriterio"]="Registro Criterios de Evaluación";
-$this->idioma["marcoListaCriterio"]="Criterios de Evaluación para el Concurso";
+$this->idioma["marcoListaCriterio"]="Criterios de Evaluación para el Proceso";
 $this->idioma["marcoCalendario"]="Registro Fase Calendario";
-$this->idioma["marcoListaCalendario"]="Calendario ejecución del Concurso";
+$this->idioma["marcoListaCalendario"]="Calendario ejecución del Proceso";
 $this->idioma["marcoPerfil"]="Registro Perfil";
-$this->idioma["marcoListaPerfil"]="Perfiles del Concurso";
+$this->idioma["marcoListaPerfil"]="Perfiles del Proceso";
 
 
 //formularios
 $this->idioma["tipo"]="Tipo: "; 
-$this->idioma["tipoTitulo"]="Seleccione el tipo de Concurso";
+$this->idioma["tipoTitulo"]="Seleccione el tipo de Proceso";
 $this->idioma["modalidad"]="Modalidad: "; 
-$this->idioma["modalidadTitulo"]="Seleccione la modalidad del Concurso";
+$this->idioma["modalidadTitulo"]="Seleccione la modalidad del Proceso";
 $this->idioma["nombre"]="Nombre: "; 
-$this->idioma["nombreTitulo"]="Ingrese el Nombre del Concurso";
+$this->idioma["nombreTitulo"]="Ingrese el Nombre del Proceso";
 $this->idioma["acuerdo"]="Acuerdo: "; 
-$this->idioma["acuerdoTitulo"]="Ingrese el Número del acuerdo del creación del Concurso ";
+$this->idioma["acuerdoTitulo"]="Ingrese el Número del acuerdo del creación del Proceso ";
 $this->idioma["soporteAcuerdo"]="Soporte Acuerdo: "; 
 $this->idioma["soporteAcuerdoTitulo"]="Adjuntar Documento en Formato PDF menor a 1 Mb";
 $this->idioma["descripcion"]="Descripción: "; 
-$this->idioma["descripcionTitulo"]="Ingrese breve descripción del Concurso ";
+$this->idioma["descripcionTitulo"]="Ingrese breve descripción del Proceso ";
 $this->idioma["fecha_inicio_concurso"]="Fecha Inicio"; 
-$this->idioma["fecha_inicio_concursoTitulo"]="Ingrese la fecha del Inicio del concurso";
+$this->idioma["fecha_inicio_concursoTitulo"]="Ingrese la fecha del Inicio del proceso";
 $this->idioma["fecha_fin_concurso"]="Fecha Terminación"; 
-$this->idioma["fecha_fin_concursoTitulo"]="Ingrese la fecha del terminación del concurso";
-$this->idioma["maximo_puntos_concTitulo"]="Ingrese el Puntaje Máximo para evaluar el concurso";
+$this->idioma["fecha_fin_concursoTitulo"]="Ingrese la fecha del terminación del proceso";
+$this->idioma["maximo_puntos_concTitulo"]="Ingrese el Puntaje Máximo para evaluar el proceso";
 $this->idioma["maximo_puntos_conc"]="Puntaje Máximo: ";
-$this->idioma["porc_aprueba_concTitulo"]="Ingrese el Porcentaje de aprobación para ser incluido a la lista de elegibles del concurso";
+$this->idioma["porc_aprueba_concTitulo"]="Ingrese el Porcentaje de aprobación para ser incluido a la lista de elegibles del proceso";
 $this->idioma["porc_aprueba_conc"]="Porcentaje Aprobación: ";
 $this->idioma["max_inscribe_aspirante"]="Máximo inscripciones:"; 
-$this->idioma["max_inscribe_aspiranteTitulo"]="Ingrese el número máximo de inscripciones por aspirante, a perfiles del concurso";
+$this->idioma["max_inscribe_aspiranteTitulo"]="Ingrese el número máximo de inscripciones por aspirante, a perfiles del proceso";
 
 
 $this->idioma["nuevoCriterio"]="Registrar Criterio de Evaluación ";
@@ -54,7 +54,7 @@ $this->idioma["maximo_puntosTitulo"]="Ingrese el Puntaje Máximo para el criteri
 $this->idioma["maximo_puntos"]="Puntaje Máximo: ";
 $this->idioma["puntos_apruebaTitulo"]="Ingrese el Puntaje Minimo para aprobación para el criterio";
 $this->idioma["puntos_aprueba"]="Puntaje Aprueba: ";
-$this->idioma["consecutivo_calendarioTitulo"]="Seleccione la fase del concurso en que se evalua el criterio.";
+$this->idioma["consecutivo_calendarioTitulo"]="Seleccione la fase del proceso en que se evalua el criterio.";
 $this->idioma["consecutivo_calendario"]="Fase: ";
 
 $this->idioma["nuevoCalendario"]="Registrar nueva fase al Calendario ";
@@ -72,7 +72,7 @@ $this->idioma["fecha_fin_resolver"]="Fecha Resolver";
 $this->idioma["fecha_fin_resolverTitulo"]="Ingrese la fecha del Máxima para resolver reclamaciones ";
 $this->idioma["consecutivo_evaluarTitulo"]="Seleccione el criterio de evaluación a aplicar";
 $this->idioma["consecutivo_evaluar"]="Criterio a evaluar: ";
-$this->idioma["porc_aprueba_faseTitulo"]="Ingrese el Porcentaje de aprobación para la fase del concurso";
+$this->idioma["porc_aprueba_faseTitulo"]="Ingrese el Porcentaje de aprobación para la fase del proceso";
 $this->idioma["porc_aprueba_fase"]="Porcentaje Aprobación: ";
 $this->idioma["soporteAutorizacion"]="Soporte Autorización: "; 
 $this->idioma["soporteAutorizacionTitulo"]="Adjuntar Documento de autorización de cambio, en Formato PDF menor a 1 Mb";
@@ -104,8 +104,8 @@ $this->idioma["botonCriterio"]="Guardar Datos de Criterio de Evaluación ";
 $this->idioma["botonCalendario"]="Guardar Datos de Calendario";
 $this->idioma["botonPerfil"]="Guardar Datos de Perfil";
 //------------------Mensajes -----------------------------------
-$this->idioma ["noEncontroConcurso"] = "No existen concursos Registrados.";
-$this->idioma ["noEncontroDetalle"] = "No se pudo consultar el detalle del concurso.";
+$this->idioma ["noEncontroConcurso"] = "No existen procesos Registrados.";
+$this->idioma ["noEncontroDetalle"] = "No se pudo consultar el detalle del proceso.";
 $this->idioma["noEncontroCriterio"]="No existe Criterio de Evaluación registrado! ";
 $this->idioma["noEncontroCalendario"]="No existe Calendario de actividades registrado! ";
 $this->idioma["noEncontroPerfil"]="No existe Perfiles registrados! ";

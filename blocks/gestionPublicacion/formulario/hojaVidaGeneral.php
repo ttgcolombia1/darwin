@@ -29,9 +29,9 @@ echo $this->miFormulario->division ( "inicio", $atributos );
                 // ---------------- CONTROL: Cuadro de Texto --------------------------------------------------------
            $esteCampo = 'logo';
            $atributos ['id'] = $esteCampo;
-           $atributos['imagen']= $directorio."Logodarwin_Nombre_banco.png";
+           $atributos['imagen']= $directorio."LogoJano_Nombre_banco.png";
            $atributos['estilo']='campoImagen';
-           $atributos['etiqueta']='darwin - Banco hojas de vida y Concuros de Méritos';
+           $atributos['etiqueta']='Jano - Banco hojas de vida y Concuros de Méritos';
            $atributos['borde']='2';
            $atributos ['ancho'] = '120px';
            $atributos ['alto'] = '50px';

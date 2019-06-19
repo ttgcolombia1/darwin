@@ -282,29 +282,30 @@ class Formulario {
                 ?>
             </article>
             <div id="logo_u">
-                <img src="<?php echo $directorioImagenes ?>/UD_logo2.png" />
+                <img src="<?php echo $directorioImagenes ?>/logottg.png" width="40" />
             </div>
 
         </section>
         <section>
             <div id="fondo_texto">
                 <div id="texto">
-                    <h3>Sistema de Gestión para Concurso de Méritos</h3><BR>
+                    <h3>Sistema de gestión para procesos de selección</h3><BR>
                     <h2>darwin</h2>
                 </div>
             </div>
         </section>
         <footer>
             <div id="footerLeft">
-                <p style="font-size: 15px;">Universidad Distrital Francisco José de
-                    Caldas</p>
-                <p>
-                    Todos los derechos reservados. Carrera 8 N. 40-78 Piso 1 / PBX
-                    3238400 - 3239300 <a href="">computo@udistrital.edu.co</a>
+                <p style="font-size: 11px;">Teleinformatics Tecnology Group Colombia LTDA</p>
+                <p> Carrera 5 # 18-22 Oficina 601 <a href="">ttg@ttg.com.co</a>
                 </p>
             </div>
-            <div id="footerRight">
-                <a href="https://www.facebook.com/UniversidadDistrital.SedeIngenieria"
+            <!--div id="footerRight">
+                <p style="font-size: 10px;">Darwin basado en Sistema de Gestión de concursos JANO</p>
+            </div-->            
+            
+            <!--div id="footerRight">
+                <a href="https://www.facebook.com/ttg"
                    target="_blank"><img
                         src="<?php echo $directorioImagenes ?>/facebook.png" /></a> <a
                     href="https://plus.google.com/110031223488101566921/about?gl=co&hl=es"
@@ -312,7 +313,7 @@ class Formulario {
                         src="<?php echo $directorioImagenes ?>/google+.png" /></a> <a
                     href="http://www.udistrital.edu.co/" target="_blank"><img
                         src="<?php echo $directorioImagenes ?>/mail.png" /></a>
-            </div>
+            </div-->
         </footer>
 
         <?php

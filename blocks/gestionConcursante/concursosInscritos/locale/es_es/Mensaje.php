@@ -9,13 +9,13 @@ $this->idioma["marcoEvaluacionPerfil"]="Resultados Evaluación Perfil";
 
 $this->idioma["inscripcion"]="Número Inscripción:";
 $this->idioma["fecha_registro"]="Fecha Inscripción:";
-$this->idioma["nombre"]="Nombre Concurso:";
-$this->idioma["modalidad"]="Modalidad Concurso:";
+$this->idioma["nombre"]="Nombre Proceso:";
+$this->idioma["modalidad"]="Modalidad Proceso:";
 $this->idioma["codigo"]="Código perfil:";
 $this->idioma["perfil"]="Perfil:";
 $this->idioma["dependencia"]="Dependencia / Facultad:";
 $this->idioma["area"]="Área / Proyecto:";
-$this->idioma["nivel_concurso"]="Nivel Concurso:";
+$this->idioma["nivel_concurso"]="Nivel Proceso:";
 
 
 
@@ -133,8 +133,8 @@ $this->idioma["marcoListaTipoJurado"]="Asignación del Tipo de Jurado";
 
 $this->idioma["noEncontroCriterios"]="No hay criterios de evaluación asociados al Tipo de Jurado! ";
 $this->idioma["noEncontroJurados"]="No hay jurados asociados al Tipo de Jurado! ";
-$this->idioma ["noEncontroConcursosActivos"] = "No hay concursos activos para la fecha.";
-$this->idioma ["noEncontroConcursosInscritos"] = "No tiene concursos inscritos.";
+$this->idioma ["noEncontroConcursosActivos"] = "No hay procesos activos para la fecha.";
+$this->idioma ["noEncontroConcursosInscritos"] = "No tiene procesos inscritos.";
 
 $this->idioma ["noEncontroPerfilesActivos"] = "No hay perfiles activos para la fecha o ya se encuentra inscrito a los perfiles que están activos";
 
