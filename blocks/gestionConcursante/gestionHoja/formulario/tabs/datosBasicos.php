@@ -346,6 +346,38 @@ class registrarForm {
                                             unset ( $atributos );
                                             // ---------------- FIN CONTROL: Cuadro de Texto --------------------------------------------------------
                                             // ---------------- CONTROL: Cuadro de Lista --------------------------------------------------------
+                                            $esteCampo = 'persona';
+                                            $atributos ['nombre'] = $esteCampo;
+                                            $atributos ['id'] = $esteCampo;
+                                            $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
+                                            $atributos ["etiquetaObligatorio"] = true;
+                                            $atributos ['tab'] = $tab ++;
+                                            //$atributos ['seleccion'] = - 1;
+                                            $atributos ['anchoEtiqueta'] = 170;
+                                            $atributos ['evento'] = '';
+                                            if (isset ( $resultadoUsuarios[0][$esteCampo] ))
+                                                 {  $atributos ['seleccion'] = $resultadoUsuarios[0][$esteCampo];}
+                                            else {	$atributos ['seleccion'] = - 1;}
+                                            $atributos ['deshabilitado'] = false;
+                                            $atributos ['columnas'] = 1;
+                                            $atributos ['tamanno'] = 1;
+                                            $atributos ['estilo'] = "jqueryui";
+                                            $atributos ['validar'] = "required";
+                                            $atributos ['limitar'] = true;
+                                            $atributos ['anchoCaja'] = 60;
+                                            $atributos ['evento'] = '';
+                                            //$atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad" );
+                                            //$matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
+                                            $matrizItems=array( array('45','Natural'), 
+                                                                array('46','Jur&iacute;dica')                                               
+                                                              );
+                                            $atributos ['matrizItems'] = $matrizItems;
+                                            // Aplica atributos globales al control
+                                            $atributos = array_merge ( $atributos, $atributosGlobales );
+                                            echo $this->miFormulario->campoCuadroLista ( $atributos );
+                                            unset ( $atributos );
+                                            // ---------------- FIN CONTROL: Cuadro de Lista --------------------------------------------------------
+                                            // ---------------- CONTROL: Cuadro de Lista --------------------------------------------------------
                                             $esteCampo = 'sexo';
                                             $atributos ['nombre'] = $esteCampo;
                                             $atributos ['id'] = $esteCampo;

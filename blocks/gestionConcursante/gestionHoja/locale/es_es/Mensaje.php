@@ -57,6 +57,7 @@ $this->idioma["nombres"]="Nombres  ";
 $this->idioma["apellidosTitulo"]="Digite los apellidos del usuario";
 $this->idioma["apellidos"]="Apellidos  "; 
 $this->idioma["sexoTitulo"]="Seleccione el género";
+$this->idioma["persona"]="Persona";
 $this->idioma["sexo"]="Género  ";
 $this->idioma["fecha_nacimientoTitulo"]="Ingrese la fecha de nacimiento";
 $this->idioma["fecha_nacimiento"]="Fecha nacimiento  ";

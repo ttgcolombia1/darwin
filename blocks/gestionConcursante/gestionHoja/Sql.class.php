@@ -820,6 +820,7 @@ class Sql extends \Sql {
                                 $cadenaSql.=" fecha_nacimiento='".$variable['fecha_nacimiento']."', ";
                                 $cadenaSql.=" pais_nacimiento='".$variable['pais_nacimiento']."', ";
                                 $cadenaSql.=" departamento_nacimiento='".$variable['departamento_nacimiento']."', ";
+                                $cadenaSql.=" persona='".$variable['persona']."', ";
                                 $cadenaSql.=" sexo='".$variable['sexo']."', ";
                                 $cadenaSql.=" lugar_identificacion='".$variable['lugar_identificacion']."', ";
                                 $cadenaSql.=" fecha_identificacion='".$variable['fecha_identificacion']."', ";
@@ -921,8 +922,11 @@ class Sql extends \Sql {
                                 $cadenaSql.=" telefono_institucion='".$variable['telefono_institucion_docencia']."', ";
                                 $cadenaSql.=" codigo_vinculacion='".$variable['codigo_vinculacion']."', ";
                                 if(isset($variable['codigo_vinculacion']) && $variable['codigo_vinculacion']==0)
-                                     { $cadenaSql.=" nombre_vinculacion='".['nombre_vinculacion']."',";}
-                                else {$cadenaSql.="nombre_vinculacion= (SELECT niv.nombre FROM general.nivel niv WHERE niv.codigo_nivel='".$variable['codigo_vinculacion']."'),";}                                    
+                                { 
+                                    $cadenaSql.=" nombre_vinculacion='".['nombre_vinculacion']."',";}
+                                else{$
+                                    $cadenaSql.="nombre_vinculacion= (SELECT niv.nombre FROM general.nivel niv WHERE niv.codigo_nivel='".$variable['codigo_vinculacion']."'),";
+                                }                                    
                                 $cadenaSql.=" descripcion_docencia='".$variable['descripcion_docencia']."', ";
                                 $cadenaSql.=" actual='".$variable['docencia_actual']."', ";
                                 $cadenaSql.=" fecha_inicio='".$variable['fecha_inicio_docencia']."', ";
