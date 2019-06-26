@@ -8,7 +8,7 @@
 // -----------------------------------------------------------------------------
 
 // Password required to gain access to the project
-define('SW_PROJECT_PASSWORD', 'concursosdarwin');
+define('SW_PROJECT_PASSWORD', 'concursosJano');
 
 // Location of Reportico Top Level Directory From Browser Point of View
 define('SW_HTTP_BASEDIR', './');
@@ -55,7 +55,7 @@ define('SW_DB_DATABASE', SW_FRAMEWORK_DB_DATABASE);
 else
 {
 define('SW_DB_DRIVER', SW_DB_TYPE);
-define('SW_DB_USER', 'darwin_reporte');
+define('SW_DB_USER', 'jano_reporte');
 $oas_external_env = getEnv('OAS_EXTERNAL_ENV');
 if($oas_external_env == 'master') {
         define('SW_DB_PASSWORD', 'KQuZdWktMGMZu5vo');
@@ -64,8 +64,8 @@ if($oas_external_env == 'master') {
         define('SW_DB_PASSWORD', 'r3p0rt3s=jano2017');
         define('SW_DB_HOST', 'pruebaspostgres.c8an9arwoaua.us-east-1.rds.amazonaws.com:5432');
 }
-else {  define('SW_DB_PASSWORD', 'r3p0rt3s=darwin2019');
-        define('SW_DB_HOST', '127.0.0.1:5432');
+else {  define('SW_DB_PASSWORD', 'r3p0rt3s=jano2017');
+        define('SW_DB_HOST', '10.20.0.184:5434');
         }
 define('SW_DB_DATABASE', 'jano');
 }

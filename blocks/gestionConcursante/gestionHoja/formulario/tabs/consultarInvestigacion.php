@@ -167,7 +167,7 @@ class consultarInvestigacion {
                                                 <td align='left' width='10%'>".$resultadoListaInvestigacion[$key]['nombre_institucion']."</td>
                                                 <td align='left'>".$resultadoListaInvestigacion[$key]['nivel_institucion']."</td>
                                                 <td align='left'>".$resultadoListaInvestigacion[$key]['telefono_institucion']."</td>
-                                                <td align='left'>".$resultadoListaInvestigacion[$key]['correo_institucion']."</td>
+                                                <td align='left'>".str_replace('\\','', $resultadoListaInvestigacion[$key]['correo_institucion'])."</td>
                                                 <td align='left'>".$resultadoListaInvestigacion[$key]['grupo_investigacion']."</td>
                                                 <td align='center'>".$resultadoListaInvestigacion[$key]['categoria_grupo']."</td>";
                                         $mostrarHtml .= "<td>";
@@ -195,7 +195,7 @@ class consultarInvestigacion {
                                                           $atributos ['tipo'] = 'hidden';
                                                           $atributos ['etiqueta'] = "";//$this->lenguaje->getCadena ( $esteCampo );
                                                           $atributos ['obligatorio'] = false;
-                                                          $atributos ['valor'] = $resultadoListaInvestigacion[$key]['direccion_investigacion'];
+                                                          $atributos ['valor'] = $atributos ['valor'] = str_replace('\\','', $resultadoListaInvestigacion[$key]['direccion_investigacion']);
                                                           $atributos ['titulo'] = $this->lenguaje->getCadena ( $esteCampo . 'Titulo' );
                                                           $atributos ['deshabilitado'] = FALSE;
                                                           $mostrarHtml .= $this->miFormulario->campoCuadroTexto ( $atributos );
