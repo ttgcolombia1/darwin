@@ -150,7 +150,9 @@ class contactoForm {
                                     $atributos ['anchoEtiqueta'] = 170;
                                     $atributos ['evento'] = '';
                                     if (isset ( $resultadoContacto[0]['departamento_residencia'] ))
-                                         {  $atributos ['seleccion'] = $resultadoContacto[0]['departamento_residencia'];}
+                                         {  $atributos ['seleccion'] = $resultadoContacto[0]['departamento_residencia'];
+                                            $parametro['pais']= $resultadoContacto[0]['pais_residencia'];
+                                         }
                                     else {	$atributos ['seleccion'] = - 1;}
                                     $atributos ['deshabilitado'] = false;
                                     $atributos ['columnas'] = 1;
@@ -160,7 +162,7 @@ class contactoForm {
                                     $atributos ['limitar'] = true;
                                     $atributos ['anchoCaja'] = 60;
                                     $atributos ['evento'] = '';
-                                    $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarDepartamento" );
+                                    $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarDepartamento",$parametro );
                                     $matrizItems = array (array (0,' '));
                                     $matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
                                     $atributos ['matrizItems'] = $matrizItems;
@@ -181,6 +183,7 @@ class contactoForm {
                                     $atributos ['evento'] = '';
                                     if (isset ( $resultadoContacto[0]['ciudad_residencia'] ))
                                          {  $atributos ['seleccion'] = $resultadoContacto[0]['ciudad_residencia'];
+                                            $parametro['departamento']= $resultadoContacto[0]['departamento_residencia'];
                                             $atributos ['deshabilitado'] = false;
                                          }
                                     else {  $atributos ['seleccion'] = - 1;
@@ -193,7 +196,7 @@ class contactoForm {
                                     $atributos ['limitar'] = true;
                                     $atributos ['anchoCaja'] = 60;
                                     $atributos ['evento'] = '';
-                                    $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad" );
+                                    $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad",$parametro );
                                     $matrizItems = array (array (0,' '));
                                     $matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
                                     $atributos ['matrizItems'] = $matrizItems;
@@ -249,7 +252,7 @@ class contactoForm {
                                     $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
                                     $atributos ['validar']="required, custom[email]";
                                     if (isset ( $resultadoContacto[0]['correo'] )) {
-                                            $atributos ['valor'] = $resultadoContacto[0]['correo'];
+                                            $atributos ['valor'] = str_replace('\\','', $resultadoContacto[0]['correo']);
                                     } else {
                                             $atributos ['valor'] = '';
                                     }
@@ -280,7 +283,7 @@ class contactoForm {
                                     $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
                                     $atributos ['validar']="custom[email]";
                                     if (isset ( $resultadoContacto[0]['correo_secundario'] )) {
-                                            $atributos ['valor'] = $resultadoContacto[0]['correo_secundario'];
+                                            $atributos ['valor'] = str_replace('\\','', $resultadoContacto[0]['correo_secundario']);
                                     } else {
                                             $atributos ['valor'] = '';
                                     }

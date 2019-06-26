@@ -452,7 +452,7 @@ class Sql extends \Sql {
                                 $cadenaSql.="AND act.nombre<>'Inscripción' ";
                                 $cadenaSql.="AND act.nombre<>'Registro soportes' ";
                                 $cadenaSql.="AND act.nombre<>'Evaluar requisitos' ";
-                                $cadenaSql.="AND act.nombre<>'Listado de elegibles' ";
+                                $cadenaSql.="AND act.nombre<>'Resultados finales' ";
                                 $cadenaSql.="ORDER BY cal.fecha_inicio ";
 
                             break;           
@@ -794,7 +794,9 @@ class Sql extends \Sql {
                                 $cadenaSql.=" prod.consecutivo_produccion,";
                                 $cadenaSql.=" prod.consecutivo_persona,";
                                 $cadenaSql.=" prod.codigo_tipo_produccion,";
-                                $cadenaSql.=" (SELECT nombre FROM general.nivel WHERE codigo_nivel=prod.codigo_tipo_produccion) nombre_tipo_produccion,";
+                                $cadenaSql.=" (CASE WHEN prod.codigo_tipo_produccion!=0
+                                                    THEN  (SELECT nombre FROM general.nivel WHERE codigo_nivel=prod.codigo_tipo_produccion)
+                                                    ELSE prod.nombre_tipo_produccion END) nombre_tipo_produccion, ";
                                 $cadenaSql.=" prod.titulo_produccion,";
                                 $cadenaSql.=" prod.nombre_autor,";
                                 $cadenaSql.=" prod.nombre_producto_incluye,";
