@@ -37,7 +37,7 @@ $paginaHeader.= "       </td>
                         <td width='450'align='center'><b><span style='font-size:13.0pt;mso-bidi-font-size:11.0pt;line-height:107%'>".mb_strtoupper($aplicativo, 'UTF-8')."</span></b>
                         </td>";
 $paginaHeader.= "       <td width='120' align='center' rowspan=4 >";
-$paginaHeader.= "            <img src='".$directorio."images/darwin.png' alt='Sistema Gestión de Procesos de Selección' height='51' width='120'>";
+$paginaHeader.= "            <img src='".$directorio."images/Jano.png' alt='Sistema Gestión de Concursos' height='51' width='120'>";
 $paginaHeader.= "       </td>";
 $paginaHeader.= " </tr> ";
 $paginaHeader.="    <tr >

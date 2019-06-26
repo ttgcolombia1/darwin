@@ -1,47 +1,47 @@
 
 <?php
 $this->idioma ["noDefinido"] = "Etiqueta no definida";
-$this->idioma["nuevoConcurso"]="<br><b>Registrar Nuevo Concurso</b>";
+$this->idioma["nuevoConcurso"]="<br><b>Registrar Nuevo Proceso</b>";
 //tabs
-$this->idioma["tabConcurso"]="Registro Concurso";
+$this->idioma["tabConcurso"]="Registro Proceso";
 $this->idioma["tabCalendario"]="Calendario";
 $this->idioma["tabInscritos"]="Aspirantes";
 $this->idioma["tabJurados"]="Jurados";
 $this->idioma["tabEvaluadores"]="Evaluadores";
 
 //marcos
-$this->idioma["marcoEjecucion"]="<b>Concursos en ejecución</b> ";
-$this->idioma["marcoConcurso"]="Nuevo Concurso";
-$this->idioma["marcoListaConcurso"]="Concursos Registrados";
-$this->idioma["marcoDetalleConcurso"]="Consulta Concurso en ejecución";
+$this->idioma["marcoEjecucion"]="<b>Procesos en ejecución</b> ";
+$this->idioma["marcoConcurso"]="Nuevo Proceso";
+$this->idioma["marcoListaConcurso"]="Procesos Registrados";
+$this->idioma["marcoDetalleConcurso"]="Consulta Proceso en ejecución";
 $this->idioma["marcoCriterio"]="Registro Criterios de Evaluación";
-$this->idioma["marcoListaCriterio"]="Criterios de Evaluación para el Concurso";
-$this->idioma["marcoCalendario"]="Calendario Concurso";
-$this->idioma["marcoListaCalendario"]="Calendario de actividades para el Concurso";
+$this->idioma["marcoListaCriterio"]="Criterios de Evaluación para el Proceso";
+$this->idioma["marcoCalendario"]="Calendario Proceso";
+$this->idioma["marcoListaCalendario"]="Calendario de actividades para el Proceso";
 $this->idioma["marcoInscrito"]="Registro Inscrito";
-$this->idioma["marcoListaInscrito"]="Aspirantes Inscritos al Concurso";
-$this->idioma["marcoListaJurados"]="Jurados del concurso";
-$this->idioma["marcoListaEvaluadores"]="Evaluadores del concurso";
+$this->idioma["marcoListaInscrito"]="Aspirantes Inscritos al Proceso";
+$this->idioma["marcoListaJurados"]="Jurados del proceso";
+$this->idioma["marcoListaEvaluadores"]="Evaluadores del proceso";
 $this->idioma["marcoListaAspirantes"]="Aspirantes a evaluar";
 
 //formularios
 $this->idioma["tipo"]="Tipo: ";
-$this->idioma["tipoTitulo"]="Seleccione el tipo de Concurso";
+$this->idioma["tipoTitulo"]="Seleccione el tipo de Proceso";
 $this->idioma["modalidad"]="Modalidad: ";
-$this->idioma["modalidadTitulo"]="Seleccione la modalidad del Concurso";
+$this->idioma["modalidadTitulo"]="Seleccione la modalidad del Proceso";
 $this->idioma["nombre"]="Nombre: ";
-$this->idioma["nombreTitulo"]="Ingrese el Nombre del Concurso";
+$this->idioma["nombreTitulo"]="Ingrese el Nombre del Proceso";
 $this->idioma["acuerdo"]="Acuerdo: ";
-$this->idioma["acuerdoTitulo"]="Ingrese el Número del acuerdo del creación del Concurso ";
+$this->idioma["acuerdoTitulo"]="Ingrese el Número del acuerdo del creación del Proceso ";
 $this->idioma["soporteAcuerdo"]="Soporte Acuerdo: ";
 $this->idioma["soporteAcuerdoTitulo"]="Adjuntar Documento en Formato PDF menor a 1 Mb";
 
 $this->idioma["descripcion"]="Descripción: ";
-$this->idioma["descripcionTitulo"]="Ingrese breve descripción del Concurso ";
+$this->idioma["descripcionTitulo"]="Ingrese breve descripción del Proceso ";
 $this->idioma["fecha_inicio_concurso"]="Fecha Inicio";
-$this->idioma["fecha_inicio_concursoTitulo"]="Ingrese la fecha del Inicio del concurso";
+$this->idioma["fecha_inicio_concursoTitulo"]="Ingrese la fecha del Inicio del proceso";
 $this->idioma["fecha_fin_concurso"]="Fecha Terminación";
-$this->idioma["fecha_fin_concursoTitulo"]="Ingrese la fecha del terminación del concurso";
+$this->idioma["fecha_fin_concursoTitulo"]="Ingrese la fecha del terminación del proceso";
 
 $this->idioma["nuevoCriterio"]="Registrar Criterio de Evaluación ";
 $this->idioma["consecutivo_factorTitulo"]="Seleccione el factor de evaluación";
@@ -90,8 +90,8 @@ $this->idioma ["botonCriterio"]="Guardar Datos de Criterio de Evaluación ";
 $this->idioma ["botonCalendario"]="Guardar Datos de Calendario";
 $this->idioma ["botonPerfil"]="Guardar Datos de Perfil";
 //------------------Mensajes -----------------------------------
-$this->idioma ["noEncontroConcurso"] = "No existen concursos en Ejecución.";
-$this->idioma ["noEncontroDetalle"] = "No se pudo consultar el detalle del concurso en Ejecución.";
+$this->idioma ["noEncontroConcurso"] = "No existen procesos en Ejecución.";
+$this->idioma ["noEncontroDetalle"] = "No se pudo consultar el detalle del proceso en Ejecución.";
 $this->idioma["noEncontroCalendario"]="No existe Calendario de actividades registrado! ";
 $this->idioma ["noEncontroJurados"] = "No se encontraron usuarios con rol de Jurado.";
 

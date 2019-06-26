@@ -34,13 +34,13 @@ class Sql extends \Sql {
 
                 case "buscarRolEvaluacion":
                                 $cadenaSql = "Select rol_id, rol_nombre, rol_alias, rol_descripcion, estado_registro_id, rol_fecha_registro";
-                                $cadenaSql .= " FROM darwin_rol";
+                                $cadenaSql .= " FROM jano_rol";
                                 $cadenaSql .= " WHERE rol_alias in ('Docencia', 'Jurado', 'ILUD', 'Personal')";
                                 break;
 
                 case "consultaRolCriterio":
                                 $cadenaSql = "Select id, id_jurado_rol, id_criterio, estado, rol_id, rol_nombre, rol_alias";
-                                $cadenaSql .= " FROM concurso.jurado_criterio, darwin_rol";
+                                $cadenaSql .= " FROM concurso.jurado_criterio, jano_rol";
                                 $cadenaSql .= " WHERE id_criterio=".$variable;
                                 $cadenaSql .= " AND id_jurado_rol=rol_id";
                                 break;

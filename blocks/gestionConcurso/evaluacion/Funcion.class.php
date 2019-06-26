@@ -59,19 +59,20 @@ class Funcion {
 		// en la carpeta funcion
 
 		// Importante: Es adecuado que sea una variable llamada opcion o action la que guie el procesamiento:
-		if (isset ( $_REQUEST ['procesarAjax'] )){
-				$this->procesarAjax ();
-  	}	elseif (isset ( $_REQUEST ["opcion"] )){
+		if (isset ( $_REQUEST ['procesarAjax'] ))
+                    {	$this->procesarAjax ();}
+                elseif (isset ( $_REQUEST ["opcion"] ))
+                    {
+                     switch ($_REQUEST ['opcion'])
+                        {
 
-           switch ($_REQUEST ['opcion']){
+                          case "guardarEvaluacion":
+                               $_REQUEST = $this->miInspectorHTML->limpiarSQL ( $_REQUEST );
+                               $this->evaluacion();
+                           break;
 
-							case "guardarEvaluacion":
-                      $_REQUEST = $this->miInspectorHTML->limpiarSQL ( $_REQUEST );
-                      $this->evaluacion();
-                  break;
-
-            }
-		}
+                         }
+                     }
 	}
 	function __construct() {
 		$this->miConfigurador = \Configurador::singleton ();

@@ -59,11 +59,8 @@ $this->idioma['mensajeMail']= '<html>
             <div id="footerRight">
                 <a href="https://www.facebook.com/UniversidadDistrital.SedeIngenieria"
                    target="_blank"><img
-                        src="#host/darwin/blocks/registro/logindarwin//imagenes/facebook.png" /></a> <a
-                    href="https://plus.google.com/110031223488101566921/about?gl=co&hl=es"
-                    target="_blank"><img
-                        src="#host/darwin/blocks/registro/logindarwin//imagenes/google+.png" /></a> <a
-                    href="http://www.udistrital.edu.co/" target="_blank"><img
+                        src="#host/darwin/blocks/registro/logindarwin//imagenes/facebook.png" /></a> 
+                <a  href="http://www.ttg.com.co/" target="_blank"><img
                         src="#host/darwin/blocks/registro/logindarwin/imagenes/mail.png" /></a>
             </div>
         </footer>

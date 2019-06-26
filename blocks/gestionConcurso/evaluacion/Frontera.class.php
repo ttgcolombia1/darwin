@@ -40,7 +40,6 @@ class Frontera {
 		include_once ("core/builder/FormularioHtml.class.php");
 
 		$this->ruta = $this->miConfigurador->getVariableConfiguracion ( "rutaBloque" );
-
 		$this->miFormulario = new \FormularioHtml ();
 		if (isset ( $_REQUEST ['opcion'] )) {
 
@@ -65,8 +64,9 @@ class Frontera {
 				case "consultarEvaluacion":
 					include_once($this->ruta."formulario/consultarEvaluacion.php");
 					break;
-
-
+                                case "guardarEvaluacion":
+                                	include_once($this->ruta."formulario/mensajeGuardarEvaluacion.php");
+                                    break;                                    
         		}
 		} else {
 			$_REQUEST ['opcion'] = "listar";

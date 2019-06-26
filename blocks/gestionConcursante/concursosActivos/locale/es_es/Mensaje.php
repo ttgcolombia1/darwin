@@ -59,13 +59,13 @@ $this->idioma["marcoListaTipoJurado"]="Asignación del Tipo de Jurado";
 
 $this->idioma["noEncontroCriterios"]="No hay criterios de evaluación asociados al Tipo de Jurado! ";
 $this->idioma["noEncontroJurados"]="No hay jurados asociados al Tipo de Jurado! ";
-$this->idioma ["noEncontroConcursosActivos"] = "No hay concursos activos para la fecha.";
+$this->idioma ["noEncontroConcursosActivos"] = "No hay procesos activos para la fecha.";
 
 $this->idioma ["noEncontroPerfilesActivos"] = "No hay perfiles activos para la fecha o ya se encuentra inscrito a los perfiles disponibles";
 $this->idioma["noEncontroPerfil"]="No se encontró el perfil";
 
-$this->idioma ["inscripcionCerrada"] = "Las fechas de inscripción al concurso, no se encuentran habilitadas.";
-$this->idioma ["limiteInscripcion"] = "No puede realizar una nueva inscripción.<br>Ya se ha completado el límite de inscripciones para el concurso.";
+$this->idioma ["inscripcionCerrada"] = "Las fechas de inscripción al proceso, no se encuentran habilitadas.";
+$this->idioma ["limiteInscripcion"] = "No puede realizar una nueva inscripción.<br>Ya se ha completado el límite de inscripciones para el proceso.";
 
 $this->idioma["autorizacion"]="Acorde con el reglamento de Concursos Docentes, ARTÍCULO 20º - PARÁGRAFO 2, ¿Autoriza a la Universidad para publicar la información relacionada con su Hoja de Vida?";
 

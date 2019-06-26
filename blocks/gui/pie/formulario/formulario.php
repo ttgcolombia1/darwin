@@ -83,9 +83,9 @@ class pie {
                     $atributos ['enlace'] = $this->lenguaje->getCadena($esteCampo);
                     $atributos ['tabIndex'] = $tab;
                     $atributos ['estilo'] = 'escudo';
-                   // $atributos ['enlaceImagen'] = $this->miConfigurador->getVariableConfiguracion('rutaUrlBloque') . 'imagen/escudo.png';
+                    $atributos ['enlaceImagen'] = $this->miConfigurador->getVariableConfiguracion('rutaUrlBloque') . 'imagen/logottg2.png';
                     $atributos ['ancho'] = '60px';
-                    $atributos ['alto'] = '80px';
+                    $atributos ['alto'] = '50px';
                     $tab++;
                     echo $this->miFormulario->enlace($atributos);
                     unset($atributos);
@@ -131,20 +131,6 @@ class pie {
                 echo $this->miFormulario->division("inicio", $atributos);
                 unset($atributos);
                 {
-                    $esteCampo = 'enlacegoogle';
-                    $atributos ['id'] = $esteCampo;
-                    //$atributos ['enlace'] = $this->lenguaje->getCadena($esteCampo);
-                    $atributos ['enlace'] = '#';
-                    $atributos ['columnas'] = 3;
-                    $atributos ['onClick']='window.open("'.$this->lenguaje->getCadena($esteCampo).'")';
-                    // $atributos ['estilo'] = 'jquery';
-                    $atributos ['enlaceImagen'] = $this->miConfigurador->getVariableConfiguracion('rutaUrlBloque') . 'imagen/google+.png';
-                    $atributos ['ancho'] = '30px';
-                    $atributos ['alto'] = '30px';
-                    $tab ++;
-                   // echo $this->miFormulario->enlace($atributos);
-                    unset($atributos);
-
                     $esteCampo = 'enlacefacebook';
                     $atributos ['id'] = $esteCampo;
                     //$atributos ['enlace'] = $this->lenguaje->getCadena($esteCampo);

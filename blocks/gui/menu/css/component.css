@@ -1,7 +1,8 @@
 .cbp-hrmenu {
 	width: 100%;
 	margin-top: 0;
-	border-bottom: 3px solid #ffffff;
+	border-bottom: 1px solid #E5E5E5;
+        background: #eeeeee;
 }
 
 /* general ul style */
@@ -24,24 +25,25 @@
 }
 /*letra menu*/
 .cbp-hrmenu > ul > li > a {
-	font-size: 110%;
+	font-size: 95%;
 	font-weight: bold;
 	padding: 0.65em;
 	/*color: #6584A9;*/
-        color: #a61616;
+        color: #c27126;
 	display: inline-block;
 }
 /*cambia color letra menu*/
 .cbp-hrmenu > ul > li > a:hover {
 	color: #bb771f;
 }
-/*enlace de menu color: #a61616;*/
+/*enlace de menu color: #c27126;*/
 .cbp-hrmenu > ul > li.cbp-hropen a,
 .cbp-hrmenu > ul > li.cbp-hropen > a:hover {
 	color: #fff;
 	/*background: #2c3670;*/
-        background: #a61616;
+        background: #c27126;
         z-index: 1000;
+        font-size: 90%;
 }
 
 /* sub-menu fondo general*/
@@ -49,7 +51,7 @@
 	display: none;
 	position: absolute;
 	/*background: #2c3670;*/
-        background: #a61616;
+        background: #c27126;
 	width: 95%;
 	left: 2.5%;
 }
@@ -85,7 +87,7 @@
         color: #ffffff;
 	padding: 1em 0 0.6em;
 	margin: 0;
-	font-size: 110%;
+	font-size: 95%;
 	font-weight: bold;
 }
 
@@ -102,7 +104,7 @@
 @media screen and (max-width: 43em) { 
 
 	.cbp-hrmenu {
-		font-size: 120%;
+		font-size: 95%;
 		border: none;
 	}
 

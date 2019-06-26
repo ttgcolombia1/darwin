@@ -218,10 +218,10 @@ class HtmlBase {
     function campoSeguro($campo = '') {
 
         if (isset($_REQUEST['tiempo'])  ) {
-            $this->atributos ['tiempo'] =  substr($_REQUEST['tiempo'], 0, -2);
-            $this->atributos ['tiempo'] =  $this->atributos ['tiempo'] * pow(10, 2);
+            @$this->atributos ['tiempo'] =  substr($_REQUEST['tiempo'], 0, -2);
+            @$this->atributos ['tiempo'] =  $this->atributos ['tiempo'] * pow(10, 2);
         }else{
-        	$this->atributos ['tiempo'] = '';
+        	@$this->atributos ['tiempo'] = '';
         }
 
         if (isset ( $this->atributos ['campoSeguro'] ) && $this->atributos ['campoSeguro'] && $this->atributos [self::ID] != 'formSaraData') {
@@ -237,7 +237,7 @@ class HtmlBase {
     function definirEstilo($estilo = '') {
 
         if (! isset ( $this->atributos [self::ESTILO] )) {
-            $this->atributos [self::ESTILO] = $estilo;
+            @$this->atributos [self::ESTILO] = $estilo;
         } else {
 
             $this->atributos [self::ESTILO] = str_replace ( 'jqueryui', 'ui-widget ui-widget-content ui-corner-all', $this->atributos [self::ESTILO] );

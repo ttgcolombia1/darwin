@@ -33,7 +33,7 @@ class Sql extends \Sql {
 			 */
 
 			 case "consultaMensaje":
-                                $cadenaSql = "Select id, tipo, texto, estado FROM darwin_texto ";
+                                $cadenaSql = "Select id, tipo, texto, estado FROM jano_texto ";
                                 $cadenaSql .= "WHERE tipo='mensaje' ";
                                 $cadenaSql .= "AND estado='A' ";
                             break;

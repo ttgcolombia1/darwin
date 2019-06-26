@@ -91,7 +91,7 @@ class Sql extends \Sql {
 			case 'consultarJurados' :
 				$cadenaSql=" SELECT ";
 				$cadenaSql.=" concat(r.rol_id,'-',u.id_usuario) AS codigo, concat( u.nombre, ' ', u.apellido, ' - ', r.rol_alias) AS nombre, u.id_usuario, r.rol_id, r.rol_nombre AS nombre_rol, r.rol_nombre ";
-				$cadenaSql.=" FROM darwin_usuario u, darwin_rol r, darwin_usuario_subsistema s";
+				$cadenaSql.=" FROM jano_usuario u, jano_rol r, jano_usuario_subsistema s";
 				$cadenaSql.=" WHERE ";
                                 $cadenaSql.=" s.estado='1' AND";
 				$cadenaSql.=" s.id_usuario=u.id_usuario AND ";
@@ -102,7 +102,7 @@ class Sql extends \Sql {
                         case 'consultarEvaluadores' :
                                 $cadenaSql=" SELECT ";
                                 $cadenaSql.=" concat(r.rol_id,'-',u.id_usuario) AS codigo, concat( u.nombre, ' ', u.apellido, ' - ', r.rol_alias) AS nombre, u.id_usuario, r.rol_id, r.rol_nombre AS nombre_rol, r.rol_nombre ";
-                                $cadenaSql.=" FROM darwin_usuario u, darwin_rol r, darwin_usuario_subsistema s";
+                                $cadenaSql.=" FROM jano_usuario u, jano_rol r, jano_usuario_subsistema s";
                                 $cadenaSql.=" WHERE ";
                                 $cadenaSql.=" s.estado='1' AND";
                                 $cadenaSql.=" s.id_usuario=u.id_usuario AND ";
@@ -580,7 +580,7 @@ class Sql extends \Sql {
                                 $cadenaSql.="(SELECT count (DISTINCT jur.id_usuario) asignado ";
                                 $cadenaSql.="FROM concurso.concurso_evaluar cev ";
                                 $cadenaSql.="INNER JOIN concurso.jurado_criterio jcrt ON jcrt.id_criterio=cev.consecutivo_criterio AND jcrt.estado=cev.estado  ";
-                                $cadenaSql.="INNER JOIN public.darwin_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' ";
+                                $cadenaSql.="INNER JOIN public.jano_usuario_subsistema usu ON usu.rol_id=jcrt.id_jurado_rol AND usu.estado='1' ";
                                 $cadenaSql.="INNER JOIN concurso.jurado_inscrito jur ON jur.estado='A' AND usu.id_usuario=jur.id_usuario AND jur.id_jurado_rol=jcrt.id_jurado_rol ";
                                 $cadenaSql.="WHERE cev.estado='A' ";
                                 $cadenaSql.="AND cev.consecutivo_concurso=eval.consecutivo_concurso ";
