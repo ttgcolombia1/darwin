@@ -11,6 +11,11 @@ $this->idioma["tabInvestigacion"]="Experiencia Investigación / Creación";
 $this->idioma["tabProduccion"]="Producción Académica";
 $this->idioma["tabIdiomas"]="Lengua Extranjera";
 
+$this->idioma["tabBasicosPerNat"]="Datos Básicos";
+$this->idioma["tabContactoPerNat"]="Datos de Contacto";
+$this->idioma["tabExperiencia"]="Experiencia";
+$this->idioma["tabComplementarios"]="Complementarios";
+
 $this->idioma["marcoBasicos"]="Registro Datos Básicos";
 $this->idioma["marcoContacto"]="Registro Datos de Contacto";
 $this->idioma["marcoFormacion"]="Registro Formación Académica";

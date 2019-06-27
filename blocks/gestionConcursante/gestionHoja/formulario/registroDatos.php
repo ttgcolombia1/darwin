@@ -25,6 +25,21 @@ $host = $this->miConfigurador->getVariableConfiguracion("host");
 $host .= $this->miConfigurador->getVariableConfiguracion("site") . "/index.php?";
 $host .= $this->miConfigurador->getVariableConfiguracion("enlace");
 
+$conexion = "estructura";
+$esteRecursoDB = $this->miConfigurador->fabricaConexiones->getRecursoDB ( $conexion );
+if (!$esteRecursoDB) {
+
+    echo "//Este se considera un error fatal";
+    exit;
+}
+$miSesion = \Sesion::singleton();
+$usuario=$miSesion->idUsuario();
+ $parametro['id_usuario']=$usuario;
+
+    $cadena_sql = $this->sql->getCadenaSql("consultarBasicos", $parametro);
+    $resultadoUsuarios = $esteRecursoDB->ejecutarAcceso($cadena_sql, "busqueda");
+    $variable['nit']=$resultadoUsuarios[0]['tipo_identificacion'];
+        
     //llama funcion para visualizar al div cuando termina de cargar
     //echo "<script language='javascript'> setTimeout(function(){visible(\"divcarga\")},500)  </script>";
     //echo "<script language='javascript'> $('#divcarga').hide(); </script>";
@@ -34,152 +49,232 @@ $host .= $this->miConfigurador->getVariableConfiguracion("enlace");
     $atributos ["estilo"] = "";
     $atributos ["estiloEnLinea"] = "display:none;"; 
     echo $this->miFormulario->division ( "inicio", $atributos );
-    unset ( $atributos );
-    {
-            // -------------------- Listado de Pestañas (Como lista No Ordenada) -------------------------------
+   
+    if($variable['nit']=="NIT"){
+        echo "Estimados usuarios mugresitos, si ingresó como persona jurídica, este sitio está en construcción";
+        unset ( $atributos );
+        {
+                // -------------------- Listado de Pestañas (Como lista No Ordenada) -------------------------------
 
-            $items = array (
-                            "tabBasicos"   => $this->lenguaje->getCadena ( "tabBasicos" ),            
-                            "tabContacto"  => $this->lenguaje->getCadena ( "tabContacto" ),
-                            "tabFormacion"  => $this->lenguaje->getCadena ( "tabFormacion" ),
-                            "tabProfesional"  => $this->lenguaje->getCadena ( "tabProfesional" ),
-                            "tabDocencia"  => $this->lenguaje->getCadena ( "tabDocencia" ),
-                            "tabInvestigacion"  => $this->lenguaje->getCadena ( "tabInvestigacion" ),
-                            "tabProduccion"  => $this->lenguaje->getCadena ( "tabProduccion" ),
-                            "tabActividad"  => $this->lenguaje->getCadena ( "tabActividad" ),
-                            "tabIdiomas"  => $this->lenguaje->getCadena ( "tabIdiomas" ),
-                            //"tabRegistrarMasivo" => $this->lenguaje->getCadena ( "tabRegistrarMasivo" ) 
-            );
-            $_REQUEST['pestanna']=0;
-            count($items);
-            $atributos ["items"] = $items;
-            $atributos ["estilo"] = "";
-            $atributos ["pestañas"] = "true";
-            //$atributos ["menu"] = "true";
-            //$atributos ["enlacePestaña"] = "true";
-            echo $this->miFormulario->listaNoOrdenada ( $atributos );
-            unset ( $atributos );
-
+                $items = array (
+                                "tabBasicosPerNat"   => $this->lenguaje->getCadena ( "tabBasicosPerNat" ),            
+                                "tabContactoPerNat"  => $this->lenguaje->getCadena ( "tabContactoPerNat" ),
+                                "tabExperiencia"  => $this->lenguaje->getCadena ( "tabExperiencia" ),
+                                "tabComplementarios"  => $this->lenguaje->getCadena ( "tabComplementarios" ),
+                               
+                                //"tabRegistrarMasivo" => $this->lenguaje->getCadena ( "tabRegistrarMasivo" ) 
+                );
+                $_REQUEST['pestanna']=0;
+                count($items);
+                $atributos ["items"] = $items;
+                $atributos ["estilo"] = "";
+                $atributos ["pestañas"] = "true";
+                //$atributos ["menu"] = "true";
+                //$atributos ["enlacePestaña"] = "true";
+                echo $this->miFormulario->listaNoOrdenada ( $atributos );
+                unset ( $atributos );
 
 
-       // ------------------Division para la pestaña 1-------------------------
-            $atributos ["id"] = "tabBasicos";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
-                {//echo '<iframe src="'.$enlaceBasico.'" style="width: 100%; height: 100% " frameborder="0"></iframe> '; 
-                 include_once ($this->ruta . "formulario/tabs/datosBasicos.php");
-                }
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 1-------------------------
 
-            // ------------------Division para la pestaña 2-------------------------
-            $atributos ["id"] = "tabContacto";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
-                   include_once ($this->ruta . "formulario/tabs/datosContacto.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 2-------------------------
-            // ------------------Division para la pestaña 3-------------------------
-            $atributos ["id"] = "tabFormacion";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
+           // ------------------Division para la pestaña 1-------------------------
+                $atributos ["id"] = "tabBasicosPerNat";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+                    {//echo '<iframe src="'.$enlaceBasico.'" style="width: 100%; height: 100% " frameborder="0"></iframe> '; 
+                     include_once ($this->ruta . "formulario/tabs/datosBasicosPerNat.php");
+                    }
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 1-------------------------
 
-            if(!isset($_REQUEST['consecutivo_formacion']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarFormacion.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosFormacion.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 3-------------------------
-            // ------------------Division para la pestaña 4-------------------------
-            $atributos ["id"] = "tabProfesional";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
+                // ------------------Division para la pestaña 2-------------------------
+                $atributos ["id"] = "tabContactoPerNat";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+                       include_once ($this->ruta . "formulario/tabs/tabContactoPerNat.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 2-------------------------
+                // ------------------Division para la pestaña 3-------------------------
+                $atributos ["id"] = "tabExperiencia";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
 
-            if(!isset($_REQUEST['consecutivo_experiencia']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarProfesional.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosProfesional.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 4-------------------------
-            // ------------------Division para la pestaña 5-------------------------
-            $atributos ["id"] = "tabDocencia";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
+                if(!isset($_REQUEST['consecutivo_formacion']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarFormacion.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosFormacion.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 3-------------------------
+                // ------------------Division para la pestaña 4-------------------------
+                $atributos ["id"] = "tabComplementarios";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
 
-            if(!isset($_REQUEST['consecutivo_docencia']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarDocencia.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosDocencia.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 5-------------------------
+                if(!isset($_REQUEST['consecutivo_experiencia']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarProfesional.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosProfesional.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 4-------------------------
+                
+        }
+    }else{
+        unset ( $atributos );
+        {
+                // -------------------- Listado de Pestañas (Como lista No Ordenada) -------------------------------
+
+                $items = array (
+                                "tabBasicos"   => $this->lenguaje->getCadena ( "tabBasicos" ),            
+                                "tabContacto"  => $this->lenguaje->getCadena ( "tabContacto" ),
+                                "tabFormacion"  => $this->lenguaje->getCadena ( "tabFormacion" ),
+                                "tabProfesional"  => $this->lenguaje->getCadena ( "tabProfesional" ),
+                                "tabDocencia"  => $this->lenguaje->getCadena ( "tabDocencia" ),
+                                "tabInvestigacion"  => $this->lenguaje->getCadena ( "tabInvestigacion" ),
+                                "tabProduccion"  => $this->lenguaje->getCadena ( "tabProduccion" ),
+                                "tabActividad"  => $this->lenguaje->getCadena ( "tabActividad" ),
+                                "tabIdiomas"  => $this->lenguaje->getCadena ( "tabIdiomas" ),
+                                //"tabRegistrarMasivo" => $this->lenguaje->getCadena ( "tabRegistrarMasivo" ) 
+                );
+                $_REQUEST['pestanna']=0;
+                count($items);
+                $atributos ["items"] = $items;
+                $atributos ["estilo"] = "";
+                $atributos ["pestañas"] = "true";
+                //$atributos ["menu"] = "true";
+                //$atributos ["enlacePestaña"] = "true";
+                echo $this->miFormulario->listaNoOrdenada ( $atributos );
+                unset ( $atributos );
 
 
-            // ------------------Division para la pestaña 6-------------------------
-            $atributos ["id"] = "tabInvestigacion";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
 
-            if(!isset($_REQUEST['consecutivo_investigacion']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarInvestigacion.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosInvestigacion.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 6-------------------------
-            // ------------------Division para la pestaña 7-------------------------
-            $atributos ["id"] = "tabProduccion";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
+           // ------------------Division para la pestaña 1-------------------------
+                $atributos ["id"] = "tabBasicos";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+                    {//echo '<iframe src="'.$enlaceBasico.'" style="width: 100%; height: 100% " frameborder="0"></iframe> '; 
+                     include_once ($this->ruta . "formulario/tabs/datosBasicos.php");
+                    }
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 1-------------------------
 
-            if(!isset($_REQUEST['consecutivo_produccion']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarProduccion.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosProduccion.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 7-------------------------
-            // ------------------Division para la pestaña 5-------------------------
-            $atributos ["id"] = "tabActividad";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
-            if(!isset($_REQUEST['consecutivo_actividad']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarActividad.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosActividad.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 5-------------------------
-          
-            // ------------------Division para la pestaña 8-------------------------
-            $atributos ["id"] = "tabIdiomas";
-            $atributos ["estilo"] = "";
-            echo $this->miFormulario->division ( "inicio", $atributos );
+                // ------------------Division para la pestaña 2-------------------------
+                $atributos ["id"] = "tabContacto";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+                       include_once ($this->ruta . "formulario/tabs/datosContacto.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 2-------------------------
+                // ------------------Division para la pestaña 3-------------------------
+                $atributos ["id"] = "tabFormacion";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
 
-            if(!isset($_REQUEST['consecutivo_conocimiento']))
-                   {include_once ($this->ruta . "formulario/tabs/consultarIdiomas.php"); }
-                   include_once ($this->ruta . "formulario/tabs/datosIdiomas.php"); 
-            echo $this->miFormulario->division ( "fin" );
-            unset ( $atributos );
-            flush();
-            ob_flush();
-            // -----------------Fin Division para la pestaña 8-------------------------
-            
+                if(!isset($_REQUEST['consecutivo_formacion']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarFormacion.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosFormacion.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 3-------------------------
+                // ------------------Division para la pestaña 4-------------------------
+                $atributos ["id"] = "tabProfesional";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
 
+                if(!isset($_REQUEST['consecutivo_experiencia']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarProfesional.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosProfesional.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 4-------------------------
+                // ------------------Division para la pestaña 5-------------------------
+                $atributos ["id"] = "tabDocencia";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+
+                if(!isset($_REQUEST['consecutivo_docencia']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarDocencia.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosDocencia.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 5-------------------------
+
+
+                // ------------------Division para la pestaña 6-------------------------
+                $atributos ["id"] = "tabInvestigacion";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+
+                if(!isset($_REQUEST['consecutivo_investigacion']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarInvestigacion.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosInvestigacion.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 6-------------------------
+                // ------------------Division para la pestaña 7-------------------------
+                $atributos ["id"] = "tabProduccion";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+
+                if(!isset($_REQUEST['consecutivo_produccion']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarProduccion.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosProduccion.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 7-------------------------
+                // ------------------Division para la pestaña 5-------------------------
+                $atributos ["id"] = "tabActividad";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+                if(!isset($_REQUEST['consecutivo_actividad']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarActividad.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosActividad.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 5-------------------------
+
+                // ------------------Division para la pestaña 8-------------------------
+                $atributos ["id"] = "tabIdiomas";
+                $atributos ["estilo"] = "";
+                echo $this->miFormulario->division ( "inicio", $atributos );
+
+                if(!isset($_REQUEST['consecutivo_conocimiento']))
+                       {include_once ($this->ruta . "formulario/tabs/consultarIdiomas.php"); }
+                       include_once ($this->ruta . "formulario/tabs/datosIdiomas.php"); 
+                echo $this->miFormulario->division ( "fin" );
+                unset ( $atributos );
+                flush();
+                ob_flush();
+                // -----------------Fin Division para la pestaña 8-------------------------
+
+
+        }
     }
 
     echo $this->miFormulario->division ( "fin" );
