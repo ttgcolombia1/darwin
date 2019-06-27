@@ -34,7 +34,7 @@ class Sql extends \Sql {
 				$cadenaSql = "SET lc_time_names = 'es_ES' ";
 			break;
 			case "consultaMensaje":
-                                $cadenaSql = "Select id, tipo, texto, estado FROM jano_texto ";
+                                $cadenaSql = "Select id, tipo, texto, estado FROM darwin_texto ";
                                 $cadenaSql .= "WHERE tipo='autorizacionHV' ";
                                 $cadenaSql .= "AND estado='A' ";
                             break;                    
@@ -53,9 +53,7 @@ class Sql extends \Sql {
 				$cadenaSql .= 'FROM ';
 				$cadenaSql .= 'general.departamento ';
 				$cadenaSql .= 'WHERE ';
-                                if(isset($variable['pais']) && $variable['pais']!='')
-                                    {$cadenaSql.=" id_pais ='".$variable['pais']."' ";}
-                                else {$cadenaSql .= 'id_pais = 112';}
+				$cadenaSql .= 'id_pais = 112;';
                             break;
                		case 'buscarDepartamentoAjax' :
 				$cadenaSql = 'SELECT ';
@@ -74,10 +72,7 @@ class Sql extends \Sql {
 				$cadenaSql .= 'FROM ';
 				$cadenaSql .= 'general.ciudad ';
 				$cadenaSql .= 'WHERE ';
-                                if(isset($variable['departamento']) && $variable['departamento']!='')
-                                     {$cadenaSql.=" id_departamento ='".$variable['departamento']."' ";}
-                                else {$cadenaSql .= 'ab_pais = \'CO\'';}
-                                
+                                $cadenaSql .= 'ab_pais = \'CO\';';
                             break;
 			case 'buscarCiudadAjax' :
 				$cadenaSql = 'SELECT ';
@@ -353,9 +348,7 @@ class Sql extends \Sql {
                                 $cadenaSql.=" prod.consecutivo_produccion,";
                                 $cadenaSql.=" prod.consecutivo_persona,";
                                 $cadenaSql.=" prod.codigo_tipo_produccion,";
-                                $cadenaSql.=" (CASE WHEN prod.codigo_tipo_produccion!=0
-                                                    THEN  (SELECT nombre FROM general.nivel WHERE codigo_nivel=prod.codigo_tipo_produccion)
-                                                    ELSE prod.nombre_tipo_produccion END) nombre_tipo_produccion, ";
+                                $cadenaSql.=" (SELECT nombre FROM general.nivel WHERE codigo_nivel=prod.codigo_tipo_produccion) nombre_tipo_produccion,";
                                 $cadenaSql.=" prod.titulo_produccion,";
                                 $cadenaSql.=" prod.nombre_autor,";
                                 $cadenaSql.=" prod.nombre_producto_incluye,";
@@ -827,6 +820,7 @@ class Sql extends \Sql {
                                 $cadenaSql.=" fecha_nacimiento='".$variable['fecha_nacimiento']."', ";
                                 $cadenaSql.=" pais_nacimiento='".$variable['pais_nacimiento']."', ";
                                 $cadenaSql.=" departamento_nacimiento='".$variable['departamento_nacimiento']."', ";
+                                $cadenaSql.=" persona='".$variable['persona']."', ";
                                 $cadenaSql.=" sexo='".$variable['sexo']."', ";
                                 $cadenaSql.=" lugar_identificacion='".$variable['lugar_identificacion']."', ";
                                 $cadenaSql.=" fecha_identificacion='".$variable['fecha_identificacion']."', ";
@@ -928,8 +922,11 @@ class Sql extends \Sql {
                                 $cadenaSql.=" telefono_institucion='".$variable['telefono_institucion_docencia']."', ";
                                 $cadenaSql.=" codigo_vinculacion='".$variable['codigo_vinculacion']."', ";
                                 if(isset($variable['codigo_vinculacion']) && $variable['codigo_vinculacion']==0)
-                                     { $cadenaSql.=" nombre_vinculacion='".['nombre_vinculacion']."',";}
-                                else {$cadenaSql.="nombre_vinculacion= (SELECT niv.nombre FROM general.nivel niv WHERE niv.codigo_nivel='".$variable['codigo_vinculacion']."'),";}                                    
+                                { 
+                                    $cadenaSql.=" nombre_vinculacion='".['nombre_vinculacion']."',";}
+                                else{$
+                                    $cadenaSql.="nombre_vinculacion= (SELECT niv.nombre FROM general.nivel niv WHERE niv.codigo_nivel='".$variable['codigo_vinculacion']."'),";
+                                }                                    
                                 $cadenaSql.=" descripcion_docencia='".$variable['descripcion_docencia']."', ";
                                 $cadenaSql.=" actual='".$variable['docencia_actual']."', ";
                                 $cadenaSql.=" fecha_inicio='".$variable['fecha_inicio_docencia']."', ";
@@ -995,7 +992,7 @@ class Sql extends \Sql {
                                 $cadenaSql.=" SET ";
                                 $cadenaSql.=" codigo_tipo_produccion='".$variable['codigo_tipo_produccion']."', ";
                                 if(isset($variable['codigo_tipo_produccion']) && $variable['codigo_tipo_produccion']==0)
-                                     { $cadenaSql.="nombre_tipo_produccion='".$variable['nombre_tipo_produccion']."',";}
+                                     { $cadenaSql.="nombre_tipo_produccion='".['nombre_vinculacion']."',";}
                                 else {$cadenaSql.="nombre_tipo_produccion= (SELECT niv.nombre FROM general.nivel niv WHERE niv.codigo_nivel='".$variable['codigo_tipo_produccion']."'),";}                                    
                                 $cadenaSql.=" titulo_produccion='".$variable['titulo_produccion']."', ";
                                 $cadenaSql.=" nombre_autor='".$variable['nombre_autor']."', ";

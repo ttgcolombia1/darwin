@@ -48,7 +48,7 @@ class registrarForm {
 		$parametro['id_usuario']=$usuario;
                 $cadena_sql = $this->miSql->getCadenaSql("consultarBasicos", $parametro);
                 $resultadoUsuarios = $esteRecursoDB->ejecutarAcceso($cadena_sql, "busqueda");
-               // var_dump($resultadoUsuarios);
+                //var_dump($resultadoUsuarios);
                 //-----BUSCA LOS TIPOS DE SOPORTES PARA EL FORMUALRIO, SEGÚN LOS RELACIONADO EN LA TABLA
                 $parametroTipoSop = array('dato_relaciona'=>'datosBasicos',);
                 $cadenaSalud_sql = $this->miSql->getCadenaSql("buscarTipoSoporte", $parametroTipoSop);
@@ -304,7 +304,7 @@ class registrarForm {
                                             $atributos ['dobleLinea'] = 0;
                                             $atributos ['tabIndex'] = $tab;
                                             $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
-                                            $atributos ['validar']="required, minSize[2]";
+                                            $atributos ['validar']="required, minSize[5]";
                                             $atributos ['valor'] = $resultadoUsuarios[0]['nombre'];
                                             $atributos ['textoFondo'] = $this->lenguaje->getCadena ( $esteCampo . 'Titulo' );
                                             //tooltip - $atributos ['titulo'] = $this->lenguaje->getCadena ( $esteCampo . 'Titulo' );
@@ -331,7 +331,7 @@ class registrarForm {
                                             $atributos ['dobleLinea'] = 0;
                                             $atributos ['tabIndex'] = $tab;
                                             $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
-                                            $atributos ['validar']="required, minSize[2]";
+                                            $atributos ['validar']="required, minSize[5]";
                                             $atributos ['valor'] =  $resultadoUsuarios[0]['apellido'];
                                             $atributos ['textoFondo'] = $this->lenguaje->getCadena ( $esteCampo . 'Titulo' );
                                             //tooltip -     $atributos ['titulo'] = $this->lenguaje->getCadena ( $esteCampo . 'Titulo' );
@@ -345,6 +345,38 @@ class registrarForm {
                                             echo $this->miFormulario->campoCuadroTexto ( $atributos );
                                             unset ( $atributos );
                                             // ---------------- FIN CONTROL: Cuadro de Texto --------------------------------------------------------
+                                            // ---------------- CONTROL: Cuadro de Lista --------------------------------------------------------
+                                            $esteCampo = 'persona';
+                                            $atributos ['nombre'] = $esteCampo;
+                                            $atributos ['id'] = $esteCampo;
+                                            $atributos ['etiqueta'] = $this->lenguaje->getCadena ( $esteCampo );
+                                            $atributos ["etiquetaObligatorio"] = true;
+                                            $atributos ['tab'] = $tab ++;
+                                            //$atributos ['seleccion'] = - 1;
+                                            $atributos ['anchoEtiqueta'] = 170;
+                                            $atributos ['evento'] = '';
+                                            if (isset ( $resultadoUsuarios[0][$esteCampo] ))
+                                                 {  $atributos ['seleccion'] = $resultadoUsuarios[0][$esteCampo];}
+                                            else {	$atributos ['seleccion'] = - 1;}
+                                            $atributos ['deshabilitado'] = false;
+                                            $atributos ['columnas'] = 1;
+                                            $atributos ['tamanno'] = 1;
+                                            $atributos ['estilo'] = "jqueryui";
+                                            $atributos ['validar'] = "required";
+                                            $atributos ['limitar'] = true;
+                                            $atributos ['anchoCaja'] = 60;
+                                            $atributos ['evento'] = '';
+                                            //$atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad" );
+                                            //$matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
+                                            $matrizItems=array( array('45','Natural'), 
+                                                                array('46','Jur&iacute;dica')                                               
+                                                              );
+                                            $atributos ['matrizItems'] = $matrizItems;
+                                            // Aplica atributos globales al control
+                                            $atributos = array_merge ( $atributos, $atributosGlobales );
+                                            echo $this->miFormulario->campoCuadroLista ( $atributos );
+                                            unset ( $atributos );
+                                            // ---------------- FIN CONTROL: Cuadro de Lista --------------------------------------------------------
                                             // ---------------- CONTROL: Cuadro de Lista --------------------------------------------------------
                                             $esteCampo = 'sexo';
                                             $atributos ['nombre'] = $esteCampo;
@@ -560,7 +592,7 @@ class registrarForm {
                                                 $atributos ['tab'] = $tab ++;
                                                 $atributos ['anchoEtiqueta'] = 170;
                                                 $atributos ['evento'] = ' ';
-                                                if (isset ($resultadoUsuarios[0]['pais_nacimiento']))
+                                                if (isset ( $resultadoUsuarios[0][$esteCampo] ))
                                                      {  $atributos ['seleccion'] = $resultadoUsuarios[0]['pais_nacimiento'];}
                                                 else {	$atributos ['seleccion'] = 112;}
                                                 $atributos ['deshabilitado'] = false;
@@ -593,10 +625,8 @@ class registrarForm {
                                                 //$atributos ['seleccion'] = - 1;
                                                 $atributos ['anchoEtiqueta'] = 170;
                                                 $atributos ['evento'] = '';
-                                                if (isset($resultadoUsuarios[0]['departamento_nacimiento']))
-                                                     {  $atributos ['seleccion'] = $resultadoUsuarios[0]['departamento_nacimiento'];
-                                                        $parametro['pais']= $resultadoUsuarios[0]['pais_nacimiento'];
-                                                     }
+                                                if (isset ( $resultadoUsuarios[0]['departamento_nacimiento'] ))
+                                                     {  $atributos ['seleccion'] = $resultadoUsuarios[0]['departamento_nacimiento'];}
                                                 else {	$atributos ['seleccion'] = - 1;}
                                                 $atributos ['deshabilitado'] = false;
                                                 $atributos ['columnas'] = 1;
@@ -606,8 +636,7 @@ class registrarForm {
                                                 $atributos ['limitar'] = true;
                                                 $atributos ['anchoCaja'] = 60;
                                                 $atributos ['evento'] = '';
-                                                
-                                                $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarDepartamento",$parametro);
+                                                $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarDepartamento" );
                                                 $matrizItems = array (array (0,' '));
                                                 $matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
                                                 $atributos ['matrizItems'] = $matrizItems;
@@ -628,7 +657,6 @@ class registrarForm {
                                                 $atributos ['evento'] = '';
                                                 if (isset ( $resultadoUsuarios[0]['lugar_nacimiento'] ))
                                                      {  $atributos ['seleccion'] = $resultadoUsuarios[0]['lugar_nacimiento'];
-                                                        $parametro['departamento']= $resultadoUsuarios[0]['departamento_nacimiento'];
                                                         $atributos ['deshabilitado'] = false;
                                                      }
                                                 else {	$atributos ['seleccion'] = - 1;
@@ -641,7 +669,7 @@ class registrarForm {
                                                 $atributos ['limitar'] = true;
                                                 $atributos ['anchoCaja'] = 60;
                                                 $atributos ['evento'] = '';
-                                                $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad",$parametro );
+                                                $atributos ['cadena_sql'] = $this->miSql->getCadenaSql ( "buscarCiudad" );
                                                 $matrizItems = array (array (0,' '));
                                                 $matrizItems = $esteRecursoDB->ejecutarAcceso ( $atributos ['cadena_sql'], "busqueda" );
                                                 $atributos ['matrizItems'] = $matrizItems;
